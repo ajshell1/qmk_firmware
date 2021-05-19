@@ -382,9 +382,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_F1,   KC_F2,    H_CLOSE,  H_OPEN,  KC_ESC,               KC_QUES,    KC_EXLM, X(AT_SYMBOL),    X(GBP), X(EURO),        X(JPY),  X(BACKTICK),    X(DQUOTE_OPEN), X(DQUOTE_CLOSE), X(PRIME), KC_UNDS,       KC_LABK, KC_RABK,  X(PIPE), KC_LCBR,    KC_RCBR,  H_COMPLETE,          KC_CIRC,   KC_PERC,  KC_HASH,  KC_DLR,  //26
 
         KC_F3,   KC_F4,    KC_FIND,  H_WRITE, KC_LEAD,  H_DOUBLE_QUOTE__PLUS_MINUS, KC_GESC,  KC_1,     KC_2,     KC_3,     KC_4,     KC_5,    KC_6,     KC_BSLASH,     KC_7,    KC_8,     KC_9,    KC_0,     KC_MINS,  KC_EQL,   KC_DEL,  H_R_BRACE__R_CHEVRON,  KC_UNDO,                  KC_TILD,   KC_SLSH,  KC_PAST,  KC_EQL,  //27
-        KC_F5,   KC_F6,    KC_EXLM,  KC_UNDO, KC_PASTE, KC_CUT ,  KC_TAB ,  KC_Q,     KC_W,     KC_F,     KC_P,     KC_B,    KC_LBRACKET,      KC_J,     KC_L,    KC_U,     KC_Y,    KC_SCOLON,    KC_QUOT, KC_BSPC, KC_CLEAR, KC_HOME,                                                          KC_P7,     KC_P8,    KC_P9,    KC_PMNS, //26
+        KC_F5,   KC_F6,    KC_EXLM,  KC_UNDO, KC_PASTE, KC_CUT ,  KC_TAB ,  KC_Q,     KC_W,     KC_F,     KC_D,     KC_P,    KC_LBRACKET,      KC_J,     KC_L,    KC_U,     KC_Y,    KC_SCOLON,    KC_QUOT, KC_BSPC, KC_CLEAR, KC_HOME,                                                          KC_P7,     KC_P8,    KC_P9,    KC_PMNS, //26
         KC_F7,   KC_F8,    KC_SELECT,H_DEBUG, MO(_FN), MO(_APL),  KC_LCTRL,   KC_A,     KC_R,     KC_S,     KC_T,     KC_G,   KC_RBRACKET,  KC_M,     KC_N,    KC_E,     KC_I, KC_O,    KC_ENT, H_LINE, H_PAGE,                                                                        KC_P4,     KC_P5,    KC_P6,    KC_PPLS, //25
-        KC_F9,   KC_F10,   H_TTY,    KC_LOCK, KC_HOME,  KC_END ,  MO(_GREEK), KC_LSFT,  KC_Z,     KC_X,     KC_D,     KC_C,    KC_V,    KC_SLASH,  KC_K,    KC_H,     KC_COMM, KC_DOT,    KC_RSFT, MO(_GREEK),KC_UP,    KC_END,                                                             KC_P1,     KC_P2,    KC_P3,    KC_ENTER,//26
+        KC_F9,   KC_F10,   H_TTY,    KC_LOCK, KC_HOME,  KC_END ,  MO(_GREEK), KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,    KC_B,    KC_SLASH,  KC_K,    KC_H,     KC_COMM, KC_DOT,    KC_RSFT, MO(_GREEK),KC_UP,    KC_END,                                                             KC_P1,     KC_P2,    KC_P3,    KC_ENTER,//26
         KC_F11,  KC_F12,   KC_HOME,  H_EOF,   KC_MPRV,  KC_MNXT,  H_7BIT,  KC_MEH, KC_LGUI,  KC_LALT, KC_HYPR,  KC_SPC,  H_CIRCLE_SM,  KC_DEL,  KC_HYPR,  KC_RALT, KC_RGUI,  KC_MEH,  KC_LEFT, KC_DOWN, KC_RGHT,                                                                            KC_P0,     KC_DEL,   KC_PDOT,  KC_BSPC  //25
     ),
 
@@ -543,7 +543,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
 
       // [daughter board] row 2 POS key macros
       case H_LOCAL:
-        send_string("[LOCAL] key");
+        send_string("doas pacman -Syu");
         return false;
       case H_NETWORK:
         send_string("[NETWORK] key");
