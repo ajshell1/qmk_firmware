@@ -376,16 +376,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *  r4: H_TTY
      *  r2: H_7BIT, H_CIRCLE_SM
      */
-    [_BASE] = LAYOUT_h7v3_183(
-        H_HELP,            H_MACRO,           H_TERMINAL,           H_QUOTE,             H_OVERSTRIKE,            H_CLEAR_INPUT,           H_CLEAR_SCREEN,                 H_HOLD_OUTPUT,             H_STOP_OUTPUT,          H_ABORT,           H_BREAK,              H_RESUME,            H_CALL,              KC_NLCK,           //14
-        H_LOCAL,           H_NETWORK,         H_SYSTEM,             H_REFRESH,           H_BUFFER,                H_SQUARE,                H_CIRCLE,                       H_TRIANGLE,                H_DIAMOND,              H_REPEAT,          H_TRANSMIT,           H_STATUS,            H_SUSPEND,           KC_CLCK,           //14
-        KC_F1,   KC_F2,    H_CLOSE,  H_OPEN,  KC_ESC,               KC_QUES,    KC_EXLM, X(AT_SYMBOL),    X(GBP), X(EURO),        X(JPY),  X(BACKTICK),    X(DQUOTE_OPEN), X(DQUOTE_CLOSE), X(PRIME), KC_UNDS,       KC_LABK, KC_RABK,  X(PIPE), KC_LCBR,    KC_RCBR,  H_COMPLETE,          KC_CIRC,   KC_PERC,  KC_HASH,  KC_DLR,  //26
-
-        KC_F3,   KC_F4,    KC_FIND,  H_WRITE, KC_LEAD,  H_DOUBLE_QUOTE__PLUS_MINUS, H_COLON__TILDE,  KC_1,     KC_2,     KC_3,     KC_4,     KC_5,    KC_6,     KC_7,    KC_8,     KC_9,    KC_0,     KC_MINS,  KC_EQL,  KC_NUBS, H_L_BRACE__L_CHEVRON,  H_R_BRACE__R_CHEVRON,  KC_UNDO,    KC_TILD,   KC_SLSH,  KC_PAST,  KC_PMNS, //27
-        KC_F5,   KC_F6,    KC_EXLM,  KC_UNDO, KC_PASTE, KC_CUT ,  KC_TAB ,  KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,    KC_Y,     KC_U,    KC_I,     KC_O,    KC_P,     KC_LPRN,  KC_RPRN, KC_BSPC, KC_CLEAR, KC_HOME,                                                                 KC_P7,     KC_P8,    KC_P9,    KC_PPLS, //26
-        KC_F7,   KC_F8,    KC_SELECT,H_DEBUG, MO(_FN), KC_NO,       MO(_APL), KC_A,     KC_S,     KC_D,     KC_F,     KC_G,    KC_H,     KC_J,    KC_K,     KC_L,    H_SEMI_COLON__BACK_TICK,  KC_QUOT,  KC_ENT , H_LINE, H_PAGE,                                                           KC_P4,     KC_P5,    KC_P6,    KC_AMPR, //25
-        KC_F9,   KC_F10,   H_TTY,    KC_LOCK, KC_HOME,  KC_END ,  MO(_GREEK), KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,    KC_B,     KC_N,    KC_M,     KC_COMM, KC_DOT,   KC_SLSH,  KC_RSFT, MO(_GREEK),KC_UP,    KC_END,                                                              KC_P1,     KC_P2,    KC_P3,    KC_EQL,  //26
-        KC_F11,  KC_F12,   KC_HOME,  H_EOF,   KC_MPRV,  KC_MNXT,  H_7BIT,  KC_LALT,  KC_HYPR,  KC_LGUI,  KC_LCTL,  KC_SPC,  H_CIRCLE_SM,  KC_DEL,  KC_RCTL,  KC_RGUI, KC_HYPR,  KC_RGUI,  KC_LEFT, KC_DOWN, KC_RGHT,                                                                        KC_DEL,    KC_P0,    KC_PDOT,  KC_ENTER //25
+    [_BASE] = LAYOUT_h7v3_213(
+		//H_HELP,            H_MACRO,           H_TERMINAL,           H_QUOTE,             H_OVERSTRIKE,            H_CLEAR_INPUT,           H_CLEAR_SCREEN,                 H_HOLD_OUTPUT,             H_STOP_OUTPUT,          H_ABORT,           H_BREAK,              H_RESUME,            H_CALL,              KC_NLCK,           //14
+        //H_LOCAL,           H_NETWORK,         H_SYSTEM,             H_REFRESH,           H_BUFFER,                H_SQUARE,                H_CIRCLE,                       H_TRIANGLE,                H_DIAMOND,              H_REPEAT,          H_TRANSMIT,           H_STATUS,            H_SUSPEND,           KC_CLCK,           //14
+		//KC_F1,   KC_F2,    H_CLOSE,  H_OPEN,  KC_ESC,               KC_QUES,    KC_EXLM, X(AT_SYMBOL),    X(GBP), X(EURO),        X(JPY),  X(BACKTICK),    X(DQUOTE_OPEN), X(DQUOTE_CLOSE), X(PRIME), KC_UNDS,       KC_LABK, KC_RABK,  X(PIPE), KC_LCBR,    KC_RCBR,  H_COMPLETE,          KC_CIRC,   KC_PERC,  KC_HASH,  KC_DLR,  //26
+		//KC_F3,   KC_F4,    KC_FIND,  H_WRITE, KC_LEAD,  H_DOUBLE_QUOTE__PLUS_MINUS, H_COLON__TILDE,  KC_1,     KC_2,     KC_3,     KC_4,     KC_5,    KC_6,     KC_7,    KC_8,     KC_9,    KC_0,     KC_MINS,  KC_EQL,  KC_NUBS, H_L_BRACE__L_CHEVRON,  H_R_BRACE__R_CHEVRON,  KC_UNDO,    KC_TILD,   KC_SLSH,  KC_PAST,  KC_PMNS, //27
+		//KC_F5,   KC_F6,    KC_EXLM,  KC_UNDO, KC_PASTE, KC_CUT ,  KC_TAB ,  KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,    KC_Y,     KC_U,    KC_I,     KC_O,    KC_P,     KC_LPRN,  KC_RPRN, KC_BSPC, KC_CLEAR, KC_HOME,                                                                 KC_P7,     KC_P8,    KC_P9,    KC_PPLS, //26
+		//KC_F7,   KC_F8,    KC_SELECT,H_DEBUG, MO(_FN), KC_NO,       MO(_APL), KC_A,     KC_S,     KC_D,     KC_F,     KC_G,    KC_H,     KC_J,    KC_K,     KC_L,    H_SEMI_COLON__BACK_TICK,  KC_QUOT,  KC_ENT , H_LINE, H_PAGE,                                                           KC_P4,     KC_P5,    KC_P6,    KC_AMPR, //25
+		//KC_F9,   KC_F10,   H_TTY,    KC_LOCK, KC_HOME,  KC_END ,  MO(_GREEK), KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,    KC_B,     KC_N,    KC_M,     KC_COMM, KC_DOT,   KC_SLSH,  KC_RSFT, MO(_GREEK),KC_UP,    KC_END,                                                              KC_P1,     KC_P2,    KC_P3,    KC_EQL,  //26
+		//KC_F11,  KC_F12,   KC_HOME,  H_EOF,   KC_MPRV,  KC_MNXT,  H_7BIT,  KC_LALT,  KC_HYPR,  KC_LGUI,  KC_LCTL,  KC_SPC,  H_CIRCLE_SM,  KC_DEL,  KC_RCTL,  KC_RGUI, KC_HYPR,  KC_RGUI,  KC_LEFT, KC_DOWN, KC_RGHT,                                                                        KC_DEL,    KC_P0,    KC_PDOT,  KC_ENTER //25
+		//https://www.mankier.com/7/xkeyboard-config#Options-Position_of_Compose_key PAUSE IS COMPOSE.
+		H_000000, H_000001, H_000002, H_000003,     H_000004, H_000005, H_000006, H_000007, H_000008, H_000009, H_000010, H_000011, H_000012, H_000013, H_000014, H_000015, H_000016, H_000017, H_000018, H_000019, H_000020, H_000021, H_000022, H_000023,     H_000024, H_000025, H_000026, H_000027,
+		H_001000, H_001001, H_001002, H_001003,     H_001004, H_001005, H_001006, H_001007, H_001008, H_001009, H_001010, H_001011, H_001012, H_001013, H_001014, H_001015, H_001016, H_001017, H_001018, H_001019, H_001020, H_001021, H_001022, H_001023,     H_001024, H_001025, H_001026, H_001027,
+		H_002000, H_002001, H_002002, H_002003,     H_002004, H_002005, H_002006, KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    H_002013, H_002014, KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   H_002021, H_002022, H_002023,     H_002024, H_002025, H_002026, H_002027,
+		
+		H_003000, H_003001, H_003002, H_003003,     KC_PAUSE,      H_003005, KC_GRAVE, KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_BSLS,  KC_7,     KC_8,     KC_9,     KC_0,     KC_MINUS, KC_EQUAL, KC_DEL,   H_003021,       KC_UNDO,     KC_NLCK,  KC_PSLS,  KC_PAST,  KC_EQL,
+        H_004000, H_004001, H_004002, H_004003,     KC_CUT,   KC_PASTE, KC_TAB,             KC_Q,     KC_W,     KC_F,     KC_D,     KC_P,     KC_LBRC,  KC_J,     KC_L,     KC_U,     KC_Y,     KC_SCLN,  KC_QUOTE, KC_BSPC,       KC_CLEAR,       KC_HOME,     KC_P7,    KC_P7,    KC_P9,    KC_PMNS,
+		H_005000, H_005001, H_005002, H_005003,     MO(_FN), MO(_APL), LCTL_T(KC_ESC),           KC_A,     KC_R,     KC_S,     KC_T,     KC_G,     KC_RBRC,  KC_M,     KC_N,     KC_E,     KC_I,     KC_O      KC_ENTER,      KC_COPY,  H_005021,               KC_P4,    KC_P5,    KC_P6,    KC_PPLS,
+        H_006000, H_006001, H_006002, H_006003,     KC_HOME, KC_END,MO(_GREEK),KC_LSFT,               KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_SLASH, KC_K,     KC_H,     KC_DOT,   KC_COMMA, KC_RSFT, MO(_GREEK),          KC_UP,    KC_END,       KC_P1,    KC_P2,    KC_P3,    KC_ENTER,
+        H_007000, H_007001, H_007002, H_007003,     KC_MPRV,  KC_MNXT, H_007006, KC_MEH,    KC_LGUI,       KC_LALT,  KC_HYPR,       KC_SPC,        H_007010, KC_DEL,        KC_HYPR,  KC_RALT,       KC_RGUI,       KC_MEH,   KC_LEFT,  KC_DOWN,  KC_RGHT,      KC_P0,    KC_DEL,   KC_PDOT,  KC_BSPC
+       
+        
     ),
 
     /* _APL: Cadet Symbol Layer (Default)
@@ -409,7 +420,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |     |     |     |     |#|     |     |     |     |        |     |        |        |     |        |        |     |        |     |     |     |     |#|     |     |     |     |
      * `-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
      */
-    [_APL] = LAYOUT_h7v3_183(
+    [_APL] = LAYOUT_h7v3_213(
         FT,               FT,                 FT,                 FT,                 FT,                 FT,                FT,                FT,                 FT,                FT,               FT,                 FT,                  FT,                FT,
         FT,               FT,                 FT,                 FT,                 FT,                 FT,                FT,                FT,                 FT,                FT,               FT,                 FT,                  FT,                FT,
         FT,      FT,      FT,       FT,       FT,                 FT,       FT,       FT,       FT,       FT,       FT,      FT,       FT,      FT,       FT,       FT,      FT,       FT,      FT,      FT,       FT,       FT,                  FT,      FT,       FT,      FT,
@@ -442,7 +453,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |     |     |     |     |#|     |     |     |     |        |     |        |        |     |        |        |     |        |     |     |     |     |#|     |     |     |     |
      * `-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
      */
-    [_GREEK] = LAYOUT_h7v3_183(
+    [_GREEK] = LAYOUT_h7v3_213(
         FT,               FT,                 FT,                 FT,                 FT,                 FT,                FT,                FT,                 FT,                FT,               FT,                 FT,                  FT,                FT,
         FT,               FT,                 FT,                 FT,                 FT,                 FT,                FT,                FT,                 FT,                FT,               FT,                 FT,                  FT,                FT,
         FT,      FT,      FT,       FT,       FT,                 FT,       FT,       FT,       FT,       FT,       FT,      FT,       FT,      FT,       FT,       FT,      FT,       FT,      FT,      FT,       FT,       FT,                  FT,      FT,       FT,      FT,
@@ -475,7 +486,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |     |     |     |     |#|     |     |     |     |        |     |        |        |     |        |        |     |        |     |     |     |     |#|     |     |     |     |
      * `-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
      */
-    [_FN] = LAYOUT_h7v3_183(
+    [_FN] = LAYOUT_h7v3_213(
         FT,               FT,                 FT,                 FT,                 FT,                 FT,                FT,                FT,                 FT,                FT,               FT,                 FT,                  FT,                RESET,
         FT,               FT,                 FT,                 FT,                 FT,                 FT,                FT,                FT,                 FT,                FT,               FT,                 FT,                  FT,                FT,
         FT,      FT,      FT,       FT,       FT,                 FT,       FT,       FT,       FT,       FT,       FT,      FT,       FT,      FT,       FT,       FT,      FT,       FT,      FT,      FT,       FT,       FT,                  FT,      FT,       FT,      FT,
