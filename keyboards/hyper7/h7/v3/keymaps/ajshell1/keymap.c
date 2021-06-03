@@ -373,7 +373,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 		H_LL0R3C00, H_LL0R3C01, H_LL0R3C02, H_LL0R3C03,     KC_PAUSE,         H_ML0R3C05, KC_GRAVE,   KC_1,       KC_2,       KC_3,       KC_4,       KC_5,       KC_6,       KC_BSLS,    KC_7,       KC_8,       KC_9,       KC_0,       KC_MINUS,   KC_EQUAL,   KC_DEL,     H_ML0R3C21,       KC_UNDO,        KC_NLCK,    KC_PSLS,    KC_PAST,    KC_EQL,
         H_LL0R4C00, H_LL0R4C01, H_LL0R4C02, H_LL0R4C03,     KC_CUT,     KC_PASTE,         KC_TAB,           KC_Q,       KC_W,       KC_F,       KC_D,       KC_P,       KC_LBRC,    KC_J,       KC_L,       KC_U,       KC_Y,       KC_SCLN,    KC_QUOTE,   KC_BSPC,          KC_COPY,          KC_HOME,        KC_P7,      KC_P7,      KC_P9,      KC_PMNS,
-		H_LL0R5C00, H_LL0R5C01, H_LL0R5C02, H_LL0R5C03,     MO(_FN),          MO(_APL),        LCTL_T(KC_ESC),    KC_A,       KC_R,       KC_S,       KC_T,       KC_G,       KC_RBRC,    KC_M,       KC_N,       KC_E,       KC_I,       KC_O,       KC_ENTER,          MO(_CYR),              H_MB5X23,       KC_P4,      KC_P5,      KC_P6,      KC_PPLS,
+		H_LL0R5C00, H_LL0R5C01, H_LL0R5C02, H_LL0R5C03,     MO(_FN),          MO(_APL),        LCTL_T(KC_ESC),    KC_A,       KC_R,       KC_S,       KC_T,       KC_G,       KC_RBRC,    KC_M,       KC_N,       KC_E,       KC_I,       KC_O,       KC_ENTER,          H_ML0R5C21,            H_ML0R5C23,     KC_P4,      KC_P5,      KC_P6,      KC_PPLS,
         H_LL0R6C00, H_LL0R6C01, H_LL0R6C02, H_LL0R6C03,     KC_HOME,    KC_END,     MO(_GRK),         KC_LSFT,          KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,       KC_SLASH,   KC_K,       KC_H,       KC_DOT,     KC_COMMA,   KC_RSFT,          MO(_GREEK),       KC_UP,      KC_END,         KC_P1,      KC_P2,      KC_P3,      KC_ENTER,
         H_LL0R7C00, H_LL0R7C01, H_LL0R7C02, H_LL0R7C03,     KC_MPRV,    KC_MNXT,    H_ML0R7C06, KC_MEH,     KC_LGUI,    KC_LALT,          KC_HYPR,          KC_SPC,           H_DL0R7C14, KC_DEL,           KC_HYPR,          KC_RALT,    KC_RGUI,          KC_MEH,     KC_LEFT,    KC_DOWN,    KC_RGHT,        KC_P0,      KC_DEL,     KC_PDOT,    KC_BSPC
        
@@ -487,195 +487,294 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
   if (record->event.pressed) {
     switch(keycode) {
       // [daughter board] row 1 POS key macros
-      case H_HELP:
-        send_string("[HELP] key");
-        return false;
-      case H_MACRO:
-        send_string("[MACRO] key");
-        return false;
-      case H_TERMINAL:
-        send_string("[TERMINAL] key");
-        return false;
-      case H_QUOTE:
-        // wraps selected (editable) text in quotation marks
-        send_string(SS_LCTL(SS_TAP(X_X))SS_TAP(X_QUOTE)SS_LCTL(SS_TAP(X_V))SS_TAP(X_QUOTE));
-        return false;
-      case H_OVERSTRIKE:
-        // toggles insert/overstrike
-        send_string(SS_TAP(X_INSERT));
-        return false;
-      case H_CLEAR_INPUT:
-        // terminal: clears from the cursor to the beginning of the current command
-        send_string(SS_LCTL(SS_TAP(X_U)));
-        return false;
-      case H_CLEAR_SCREEN:
-        send_string(SS_LCTL(SS_TAP(X_L)));
-        // ^ linux/osx shell specific, for windows command replace with
-        // send_string(SS_TAP(X_C)SS_TAP(X_L)SS_TAP(X_S)SS_TAP(KC_ENTER));
-        return false;
-      case H_HOLD_OUTPUT:
-        send_string("[HOLD OUTPUT] key");
-        return false;
-      case H_STOP_OUTPUT:
-        send_string("[STOP OUTPUT] key");
-        return false;
-      case H_ABORT:
-        send_string(SS_LCTL(SS_TAP(X_C)));
-        return false;
-      case H_BREAK:
-        send_string(SS_TAP(X_PAUSE));
-        return false;
-      case H_RESUME:
-        send_string(SS_TAP(X_F)SS_TAP(X_G)SS_TAP(X_ENTER));
-        return false;
-      case H_CALL:
-        send_string("[CALL] key");
-        return false;
-
-      // [daughter board] row 2 POS key macros
-      case H_LOCAL:
-        send_string("[LOCAL] key");
-        return false;
-      case H_NETWORK:
-        send_string("[NETWORK] key");
-        return false;
-      case H_SYSTEM:
-        send_string("[SYSTEM] key");
-        return false;
-      case H_REFRESH:
-        send_string(SS_LCTL(SS_TAP(X_R)));
-        return false;
-      case H_BUFFER:
-        send_string("[BUFFER] key");
-        return false;
-      case H_SQUARE:
-        send_string("[SQUARE] key");
-        return false;
-      case H_CIRCLE:
-        send_string("[CIRCLE] key");
-        return false;
-      case H_TRIANGLE:
-        send_string("[TRIANGLE] key");
-        return false;
-      case H_DIAMOND:
-        send_string("[DIAMOND] key");
-        return false;
-      case H_REPEAT:
-        send_string("[REPEAT] key");
-        return false;
-      case H_TRANSMIT:
-        send_string("[TRANSMIT] key");
-        return false;
-      case H_STATUS:
-        send_string("[STATUS] key");
-        return false;
-      case H_SUSPEND:
-        send_string(SS_LCTL(SS_TAP(X_Z)));
-        return false;
-
+	case H_DL0R0C00:
+		send_string("H_DL0R0C00");
+		return false;
+	case H_DL0R0C01:
+		send_string("H_DL0R0C01");
+		return false;
+	case H_DL0R0C02:
+		send_string("H_DL0R0C02");
+		return false;
+	case H_DL0R0C03:
+		send_string("H_DL0R0C03");
+		return false;
+	case H_DL0R0C04:
+		send_string("H_DL0R0C04");
+		return false;
+	case H_DL0R0C05:
+		send_string("H_DL0R0C05");
+		return false;
+	case H_DL0R0C06:
+		send_string("H_DL0R0C06");
+		return false;
+	case H_DL0R0C07:
+		send_string("H_DL0R0C07");
+		return false;
+	case H_DL0R0C08:
+		send_string("H_DL0R0C08");
+		return false;
+	case H_DL0R0C09:
+		send_string("H_DL0R0C09");
+		return false;
+	case H_DL0R0C10:
+		send_string("H_DL0R0C10");
+		return false;
+	case H_DL0R0C11:
+		send_string("H_DL0R0C11");
+		return false;
+	case H_DL0R0C12:
+		send_string("H_DL0R0C12");
+		return false;
+	case H_DL0R0C13:
+		send_string("H_DL0R0C13");
+		return false;
+	case H_DL0R0C14:
+		send_string("H_DL0R0C14");
+		return false;
+	case H_DL0R0C15:
+		send_string("H_DL0R0C15");
+		return false;
+	case H_DL0R0C16:
+		send_string("H_DL0R0C16");
+		return false;
+	case H_DL0R0C17:
+		send_string("H_DL0R0C17");
+		return false;
+	case H_DL0R0C18:
+		send_string("H_DL0R0C18");
+		return false;
+	case H_DL0R0C19:
+		send_string("H_DL0R0C19");
+		return false;
+	case H_DL0R0C20:
+		send_string("H_DL0R0C20");
+		return false;
+	case H_DL0R0C21:
+		send_string("H_DL0R0C21");
+		return false;
+	case H_DL0R0C22:
+		send_string("H_DL0R0C22");
+		return false;
+	case H_DL0R0C23:
+		send_string("H_DL0R0C23");
+		return false;
+	case H_DL0R0C24:
+		send_string("H_DL0R0C24");
+		return false;
+	case H_DL0R0C25:
+		send_string("H_DL0R0C25");
+		return false;
+	case H_DL0R0C26:
+		send_string("H_DL0R0C26");
+		return false;
+	case H_DL0R0C27:
+		send_string("H_DL0R0C27");
+		return false;
+// [daughter board] row 2 POS key macros     
+	case H_DL0R1C00:
+		send_string("H_DL0R1C00");
+		return false;
+	case H_DL0R1C01:
+		send_string("H_DL0R1C01");
+		return false;
+	case H_DL0R1C02:
+		send_string("H_DL0R1C02");
+		return false;
+	case H_DL0R1C03:
+		send_string("H_DL0R1C03");
+		return false;
+	case H_DL0R1C04:
+		send_string("H_DL0R1C04");
+		return false;
+	case H_DL0R1C05:
+		send_string("H_DL0R1C05");
+		return false;
+	case H_DL0R1C06:
+		send_string("H_DL0R1C06");
+		return false;
+	case H_DL0R1C07:
+		send_string("H_DL0R1C07");
+		return false;
+	case H_DL0R1C08:
+		send_string("H_DL0R1C08");
+		return false;
+	case H_DL0R1C09:
+		send_string("H_DL0R1C09");
+		return false;
+	case H_DL0R1C10:
+		send_string("H_DL0R1C10");
+		return false;
+	case H_DL0R1C11:
+		send_string("H_DL0R1C11");
+		return false;
+	case H_DL0R1C12:
+		send_string("H_DL0R1C12");
+		return false;
+	case H_DL0R1C13:
+		send_string("H_DL0R1C13");
+		return false;
+	case H_DL0R1C14:
+		send_string("H_DL0R1C14");
+		return false;
+	case H_DL0R1C15:
+		send_string("H_DL0R1C15");
+		return false;
+	case H_DL0R1C16:
+		send_string("H_DL0R1C16");
+		return false;
+	case H_DL0R1C17:
+		send_string("H_DL0R1C17");
+		return false;
+	case H_DL0R1C18:
+		send_string("H_DL0R1C18");
+		return false;
+	case H_DL0R1C19:
+		send_string("H_DL0R1C19");
+		return false;
+	case H_DL0R1C20:
+		send_string("H_DL0R1C20");
+		return false;
+	case H_DL0R1C21:
+		send_string("H_DL0R1C21");
+		return false;
+	case H_DL0R1C22:
+		send_string("H_DL0R1C22");
+		return false;
+	case H_DL0R1C23:
+		send_string("H_DL0R1C23");
+		return false;
+	case H_DL0R1C24:
+		send_string("H_DL0R1C24");
+		return false;
+	case H_DL0R1C25:
+		send_string("H_DL0R1C25");
+		return false;
+	case H_DL0R1C26:
+		send_string("H_DL0R1C26");
+		return false;
+	case H_DL0R1C27:
+		send_string("H_DL0R1C27");
+		return false;
       // [daughter board] row 3
-      case H_CLOSE:
-        // ctrl-w: closes a tab/panel within an application
-        send_string(SS_LCTL(SS_TAP(X_W)));
-        return false;
-      case H_OPEN:
-        // ctrl-n: opens a tab/panel
-        send_string(SS_LCTL(SS_TAP(X_N)));
-        return false;
-      case H_COMPLETE:
-        // tab tab: bash command line completion
-        send_string(SS_TAP(X_TAB)SS_TAP(X_TAB));
-        return false;
-
-      // [main board] row 1
-      case H_WRITE:
-        send_string(SS_LCTL(SS_TAP(X_S)));
-        return false;
-
-      case H_DOUBLE_QUOTE__PLUS_MINUS:
-        if (get_mods() & MODS_SHIFT_MASK) {
-          send_unicode_string("±");
-        } else {
-          send_unicode_string("\"");
-        }
-        return false;
-
-      case H_COLON__TILDE:
-        if (get_mods() & MODS_SHIFT_MASK) {
-          send_unicode_string("∼");
-        } else {
-          send_string(":");
-        }
-        return false;
-
-      case H_L_BRACE__L_CHEVRON:
-        if (get_mods() & MODS_SHIFT_MASK) {
-          send_unicode_string("‹");
-        } else {
-          send_string("{");
-        }
-        return false;
-
-      case H_R_BRACE__R_CHEVRON:
-        if (get_mods() & MODS_SHIFT_MASK) {
-          send_unicode_string("›");
-        } else {
-          send_string("}");
-        }
-        return false;
-
-      // [main board] row 2
-      case H_MARK:
-        send_string("[MARK] key");
-        return false;
-      case H_LEFT_PAREN__LEFT_BRACKET:
-        if (get_mods() & MODS_SHIFT_MASK) {
-          CLEAN_MODS(
-            send_string(SS_TAP(X_LBRACKET))
-          );
-        } else {
-          send_string("(");
-        }
-        return false;
-
-      case H_RIGHT_PAREN__RIGHT_BRACKET:
-        if (get_mods() & MODS_SHIFT_MASK) {
-          CLEAN_MODS(
-            send_string(SS_TAP(X_RBRACKET))
-          );
-        } else {
-          send_string(")");
-        }
-        return false;
-
-      // [main board] row 3
-      case H_SELECT:
-        send_string("[SELECT] key");
-        return false;
-      case H_DEBUG:
-        send_string("[DEBUG] key");
-        return false;
-      case H_SEMI_COLON__BACK_TICK:
-        if (get_mods() & MODS_SHIFT_MASK) {
-          CLEAN_MODS(
-            send_string("`");
-          );
-        } else {
-          send_string(";");
-        }
-        return false;
-      case H_TICK__QUOTE:
-        if (get_mods() & MODS_SHIFT_MASK) {
-          // host configured for uk layout, for ansi, switch to X_QUOT
-          send_string(SS_TAP(X_2));
-        } else {
-          send_string("'");
-        }
-        return false;
-      case H_LINE:
-        send_string("[LINE] key");
-        return false;
-      case H_PAGE:
+	case H_DL0R2C00:
+		send_string("H_DL0R2C00");
+		return false;
+	case H_DL0R2C01:
+		send_string("H_DL0R2C01");
+		return false;
+	case H_DL0R2C02:
+		send_string("H_DL0R2C02");
+		return false;
+	case H_DL0R2C03:
+		send_string("H_DL0R2C03");
+		return false;
+	case H_DL0R2C04:
+		send_string("H_DL0R2C04");
+		return false;
+	case H_DL0R2C05:
+		send_string("H_DL0R2C05");
+		return false;
+	case H_DL0R2C06:
+		send_string("H_DL0R2C06");
+		return false;
+	case H_DL0R2C13:
+		send_string("H_DL0R2C13");
+		return false;
+	case H_DL0R2C14:
+		send_string("H_DL0R2C14");
+		return false;
+	case H_DL0R2C21:
+		send_string("H_DL0R2C21");
+		return false;
+	case H_DL0R2C22:
+		send_string("H_DL0R2C22");
+		return false;
+	case H_DL0R2C23:
+		send_string("H_DL0R2C23");
+		return false;
+	case H_DL0R2C24:
+		send_string("H_DL0R2C24");
+		return false;
+	case H_DL0R2C25:
+		send_string("H_DL0R2C25");
+		return false;
+	case H_DL0R2C26:
+		send_string("H_DL0R2C26");
+		return false;
+	case H_DL0R2C27:
+		send_string("H_DL0R2C27");
+		return false;
+	case H_LL0R3C00:
+		send_string("H_LL0R3C00");
+		return false;
+	case H_LL0R3C01:
+		send_string("H_LL0R3C01");
+		return false;
+	case H_LL0R3C02:
+		send_string("H_LL0R3C02");
+		return false;
+	case H_LL0R3C03:
+		send_string("H_LL0R3C03");
+		return false;
+	case H_LL0R4C00:
+		send_string("H_LL0R4C00");
+		return false;
+	case H_LL0R4C01:
+		send_string("H_LL0R4C01");
+		return false;
+	case H_LL0R4C02:
+		send_string("H_LL0R4C02");
+		return false;
+	case H_LL0R4C03:
+		send_string("H_LL0R4C03");
+		return false;
+	case H_LL0R5C00:
+		send_string("H_LL0R5C00");
+		return false;
+	case H_LL0R5C01:
+		send_string("H_LL0R5C01");
+		return false;
+	case H_LL0R5C02:
+		send_string("H_LL0R5C02");
+		return false;
+	case H_LL0R5C03:
+		send_string("H_LL0R5C03");
+		return false;
+	case H_LL0R6C00:
+		send_string("H_LL0R6C00");
+		return false;
+	case H_LL0R6C01:
+		send_string("H_LL0R6C01");
+		return false;
+	case H_LL0R6C02:
+		send_string("H_LL0R6C02");
+		return false;
+	case H_LL0R6C03:
+		send_string("H_LL0R6C03");
+		return false;
+	case H_LL0R7C00:
+		send_string("H_LL0R7C00");
+		return false;
+	case H_LL0R7C01:
+		send_string("H_LL0R7C01");
+		return false;
+	case H_LL0R7C02:
+		send_string("H_LL0R7C02");
+		return false;
+	case H_LL0R7C03:
+		send_string("H_LL0R7C03");
+		return false;
+	case H_ML0R3C05:
+		send_string("H_ML0R3C05");
+		return false;
+	case H_ML0R3C21:
+		send_string("H_ML0R3C21");
+		return false;
+	case H_ML0R5C21:
+		send_string("H_ML0R5C21");
+		return false;
+	case H_ML0R5C23:
         if (get_mods() & MODS_SHIFT_MASK) {
           CLEAN_MODS(
             send_string(SS_TAP(X_PGUP));
@@ -683,26 +782,13 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
         } else {
           send_string(SS_TAP(X_PGDN));
         }
-        return false;
-
-      // [main board] row 4
-      case H_TTY:
-        send_string("[TTY] key");
-        return false;
-      case H_LOCK:
-        send_string("[LOCK] key");
-        return false;
-
-      // [main board] row 5
-      case H_EOF:
-        send_string(SS_LCTL(SS_TAP(X_END)));
-        return false;
-      case H_7BIT:
-        send_string("[7BIT] key");
-        return false;
-      case H_CIRCLE_SM:
-        send_string("[CIRCLE_SM] key");
-        return false;
+		return false;
+	case H_ML0R7C06:
+		send_string("H_ML0R7C06");
+		return false;
+	case H_ML0R7C14:
+		send_string("H_ML0R7C14");
+		return false;
     }
   }
 
