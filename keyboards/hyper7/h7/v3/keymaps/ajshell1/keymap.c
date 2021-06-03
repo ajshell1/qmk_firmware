@@ -23,34 +23,6 @@ enum unicode_names {
     PRIME,
     PIPE,
 
-// APL
-    N_ARY_LOGICAL_AND,
-    N_ARY_LOGICAL_OR,
-    N_ARY_INTERSECT,
-    N_ARY_UNION,
-    SUBSET_OF,
-    SUPERSET_OF,
-    FORALL,
-    LEMNISCATE,
-    THERE_EXISTS,
-    PARTIAL_DIFFERENTIAL,
-    UP_TACK,
-    DOWN_TACK,
-    RIGHT_TACK,
-    LEFT_TACK,
-    UPWARDS_ARROW,
-    DOWNARDS_ARROW,
-    LEFTWARDS_ARROW,
-    RIGHTWARDS_ARROW,
-    LEFTRIGHT_ARROW,
-    LEFT_FLOOR,
-    LEFT_CEILING,
-    NOT_EQUAL_TO,
-    ASYMPTOTICALLY_EQUAL_TO,
-    NOT_ASYMPTOTICALLY_EQUAL_TO,
-    LESS_THAN_OR_EQUAL,
-    GREATER_THAN_OR_EQUAL,
-
 // [main board] row 0
     CONTOUR_INTEGRAL,
     COPTIC_LC_DEI,
@@ -386,15 +358,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		//KC_F9,   KC_F10,   H_TTY,    KC_LOCK, KC_HOME,  KC_END ,  MO(_GREEK), KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,    KC_B,     KC_N,    KC_M,     KC_COMM, KC_DOT,   KC_SLSH,  KC_RSFT, MO(_GREEK),KC_UP,    KC_END,                                                              KC_P1,     KC_P2,    KC_P3,    KC_EQL,  //26
 		//KC_F11,  KC_F12,   KC_HOME,  H_EOF,   KC_MPRV,  KC_MNXT,  H_7BIT,  KC_LALT,  KC_HYPR,  KC_LGUI,  KC_LCTL,  KC_SPC,  H_CIRCLE_SM,  KC_DEL,  KC_RCTL,  KC_RGUI, KC_HYPR,  KC_RGUI,  KC_LEFT, KC_DOWN, KC_RGHT,                                                                        KC_DEL,    KC_P0,    KC_PDOT,  KC_ENTER //25
 		//https://www.mankier.com/7/xkeyboard-config#Options-Position_of_Compose_key PAUSE IS COMPOS
-        H_DB0X00, H_DB0X01, H_DB0X02, H_DB0X03,     H_DB0X04, H_DB0X05, H_DB0X06, H_DB0X07, H_DB0X08, H_DB0X09, H_DB0X10, H_DB0X11, H_DB0X12, H_DB0X13, H_DB0X14, H_DB0X15, H_DB0X16, H_DB0X17, H_DB0X18, H_DB0X19, H_DB0X20, H_DB0X21, H_DB0X22, H_DB0X23,     H_DB0X24, H_DB0X25, H_DB0X26, H_DB0X27,
-        H_DB1X00, H_DB1X01, H_DB1X02, H_DB1X03,     H_DB1X04, H_DB1X05, H_DB1X06, H_DB1X07, H_DB1X08, H_DB1X09, H_DB1X10, H_DB1X11, H_DB1X12, H_DB1X13, H_DB1X14, H_DB1X15, H_DB1X16, H_DB1X17, H_DB1X18, H_DB1X19, H_DB1X20, H_DB1X21, H_DB1X22, H_DB1X23,     H_DB1X24, H_DB1X25, H_DB1X26, H_DB1X27,
-        H_DB2X00, H_DB2X01, H_DB2X02, H_DB2X03,     H_DB2X04, H_DB2X05, H_DB2X06, KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    H_DB2X13, H_DB2X14, KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   H_DB2X21, H_DB2X22, H_DB2X23,     H_DB2X24, H_DB2X25, H_DB2X26, H_DB2X27,
-		
-		H_LC3X00, H_LC3X01, H_LC3X02, H_LC3X03,     KC_PAUSE, H_MB3X05, KC_GRAVE,           KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_BSLS,  KC_7,     KC_8,     KC_9,     KC_0,     KC_MINUS, KC_EQUAL, KC_DEL,   H_MB3X22, KC_UNDO,      KC_NLCK,  KC_PSLS,  KC_PAST,  KC_EQL,
-        H_LC4X00, H_LC4X01, H_LC4X02, H_LC4X03,     KC_CUT,   KC_PASTE, KC_TAB,             KC_Q,     KC_W,     KC_F,     KC_D,     KC_P,     KC_LBRC,  KC_J,     KC_L,     KC_U,     KC_Y,     KC_SCLN,  KC_QUOTE,           KC_BSPC,  KC_COPY,  KC_HOME,      KC_P7,    KC_P7,    KC_P9,    KC_PMNS,
-		H_LC5X00, H_LC5X01, H_LC5X02, H_LC5X03,     MO(_FN),  MO(_APL), LCTL_T(KC_ESC),     KC_A,     KC_R,     KC_S,     KC_T,     KC_G,     KC_RBRC,  KC_M,     KC_N,     KC_E,     KC_I,     KC_O,                         KC_ENTER, MO(_CYR), H_MB5X23,     KC_P4,    KC_P5,    KC_P6,    KC_PPLS,
-        H_LC6X00, H_LC6X01, H_LC6X02, H_LC6X03,     KC_HOME,  KC_END,  MO(_GRK),  KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_SLASH, KC_K,     KC_H,     KC_DOT,   KC_COMMA,                     KC_RSFT,  MO(_GREEK), KC_UP,  KC_END,       KC_P1,    KC_P2,    KC_P3,    KC_ENTER,
-        H_LC7X00, H_LC7X01, H_LC7X02, H_LC7X03,     KC_MPRV,  KC_MNXT,  H_MB7X06, KC_MEH,   KC_LGUI,  KC_LALT,  KC_HYPR,  KC_SPC,   H_MB7X12, KC_DEL,   KC_HYPR,  KC_RALT,  KC_RGUI,  KC_MEH,                                 KC_LEFT,  KC_DOWN,  KC_RGHT,      KC_P0,    KC_DEL,   KC_PDOT,  KC_BSPC
+        //H_DB0X00, H_DB0X01, H_DB0X02, H_DB0X03,     H_DB0X04, H_DB0X05, H_DB0X06, H_DB0X07, H_DB0X08, H_DB0X09, H_DB0X10, H_DB0X11, H_DB0X12, H_DB0X13, H_DB0X14, H_DB0X15, H_DB0X16, H_DB0X17, H_DB0X18, H_DB0X19, H_DB0X20, H_DB0X21, H_DB0X22, H_DB0X23,     H_DB0X24, H_DB0X25, H_DB0X26, H_DB0X27,
+        //H_DB1X00, H_DB1X01, H_DB1X02, H_DB1X03,     H_DB1X04, H_DB1X05, H_DB1X06, H_DB1X07, H_DB1X08, H_DB1X09, H_DB1X10, H_DB1X11, H_DB1X12, H_DB1X13, H_DB1X14, H_DB1X15, H_DB1X16, H_DB1X17, H_DB1X18, H_DB1X19, H_DB1X20, H_DB1X21, H_DB1X22, H_DB1X23,     H_DB1X24, H_DB1X25, H_DB1X26, H_DB1X27,
+        //H_DB2X00, H_DB2X01, H_DB2X02, H_DB2X03,     H_DB2X04, H_DB2X05, H_DB2X06, KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    H_DB2X13, H_DB2X14, KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   H_DB2X21, H_DB2X22, H_DB2X23,     H_DB2X24, H_DB2X25, H_DB2X26, H_DB2X27,
+		//
+		//H_LC3X00, H_LC3X01, H_LC3X02, H_LC3X03,     KC_PAUSE, H_MB3X05, KC_GRAVE,           KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_BSLS,  KC_7,     KC_8,     KC_9,     KC_0,     KC_MINUS, KC_EQUAL, KC_DEL,   H_MB3X22, KC_UNDO,      KC_NLCK,  KC_PSLS,  KC_PAST,  KC_EQL,
+        //H_LC4X00, H_LC4X01, H_LC4X02, H_LC4X03,     KC_CUT,   KC_PASTE, KC_TAB,             KC_Q,     KC_W,     KC_F,     KC_D,     KC_P,     KC_LBRC,  KC_J,     KC_L,     KC_U,     KC_Y,     KC_SCLN,  KC_QUOTE,           KC_BSPC,  KC_COPY,  KC_HOME,      KC_P7,    KC_P7,    KC_P9,    KC_PMNS,
+		//H_LC5X00, H_LC5X01, H_LC5X02, H_LC5X03,     MO(_FN),  MO(_APL), LCTL_T(KC_ESC),     KC_A,     KC_R,     KC_S,     KC_T,     KC_G,     KC_RBRC,  KC_M,     KC_N,     KC_E,     KC_I,     KC_O,                         KC_ENTER, MO(_CYR), H_MB5X23,     KC_P4,    KC_P5,    KC_P6,    KC_PPLS,
+        //H_LC6X00, H_LC6X01, H_LC6X02, H_LC6X03,     KC_HOME,  KC_END,  MO(_GRK),  KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_SLASH, KC_K,     KC_H,     KC_DOT,   KC_COMMA,                     KC_RSFT,  MO(_GREEK), KC_UP,  KC_END,       KC_P1,    KC_P2,    KC_P3,    KC_ENTER,
+        //H_LC7X00, H_LC7X01, H_LC7X02, H_LC7X03,     KC_MPRV,  KC_MNXT,  H_MB7X06, KC_MEH,   KC_LGUI,  KC_LALT,  KC_HYPR,  KC_SPC,   H_MB7X12, KC_DEL,   KC_HYPR,  KC_RALT,  KC_RGUI,  KC_MEH,                                 KC_LEFT,  KC_DOWN,  KC_RGHT,      KC_P0,    KC_DEL,   KC_PDOT,  KC_BSPC
+        H_DL0R0C00, H_DL0R0C01, H_DL0R0C02, H_DL0R0C03,     H_DL0R0C04, H_DL0R0C05, H_DL0R0C06, H_DL0R0C07, H_DL0R0C08, H_DL0R0C09, H_DL0R0C10, H_DL0R0C11, H_DL0R0C12, H_DL0R0C13, H_DL0R0C14, H_DL0R0C15, H_DL0R0C16, H_DL0R0C17, H_DL0R0C18, H_DL0R0C19, H_DL0R0C20, H_DL0R0C21, H_DL0R0C22, H_DL0R0C23,     H_DL0R0C24, H_DL0R0C25, H_DL0R0C26, H_DL0R0C27,
+        H_DL0R1C00, H_DL0R1C01, H_DL0R1C02, H_DL0R1C03,     H_DL0R1C04, H_DL0R1C05, H_DL0R1C06, H_DL0R1C07, H_DL0R1C08, H_DL0R1C09, H_DL0R1C10, H_DL0R1C11, H_DL0R1C12, H_DL0R1C13, H_DL0R1C14, H_DL0R1C15, H_DL0R1C16, H_DL0R1C17, H_DL0R1C18, H_DL0R1C19, H_DL0R1C20, H_DL0R1C21, H_DL0R1C22, H_DL0R1C23,     H_DL0R1C24, H_DL0R1C25, H_DL0R1C26, H_DL0R1C27,
+        H_DL0R2C00, H_DL0R2C01, H_DL0R2C02, H_DL0R2C03,     H_DL0R2C04, H_DL0R2C05, H_DL0R2C06, KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F6,      H_DL0R2C13, H_DL0R2C14, KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F11,     KC_F12,     H_DL0R2C21, H_DL0R2C22, H_DL0R2C23,     H_DL0R2C24, H_DL0R2C25, H_DL0R2C26, H_DL0R2C27,
+
+		H_LL0R3C00, H_LL0R3C01, H_LL0R3C02, H_LL0R3C03,     KC_PAUSE,         H_ML0R3C05, KC_GRAVE,   KC_1,       KC_2,       KC_3,       KC_4,       KC_5,       KC_6,       KC_BSLS,    KC_7,       KC_8,       KC_9,       KC_0,       KC_MINUS,   KC_EQUAL,   KC_DEL,     H_ML0R3C21,       KC_UNDO,        KC_NLCK,    KC_PSLS,    KC_PAST,    KC_EQL,
+        H_LL0R4C00, H_LL0R4C01, H_LL0R4C02, H_LL0R4C03,     KC_CUT,     KC_PASTE,         KC_TAB,           KC_Q,       KC_W,       KC_F,       KC_D,       KC_P,       KC_LBRC,    KC_J,       KC_L,       KC_U,       KC_Y,       KC_SCLN,    KC_QUOTE,   KC_BSPC,          KC_COPY,          KC_HOME,        KC_P7,      KC_P7,      KC_P9,      KC_PMNS,
+		H_LL0R5C00, H_LL0R5C01, H_LL0R5C02, H_LL0R5C03,     MO(_FN),          MO(_APL),        LCTL_T(KC_ESC),    KC_A,       KC_R,       KC_S,       KC_T,       KC_G,       KC_RBRC,    KC_M,       KC_N,       KC_E,       KC_I,       KC_O,       KC_ENTER,          MO(_CYR),              H_MB5X23,       KC_P4,      KC_P5,      KC_P6,      KC_PPLS,
+        H_LL0R6C00, H_LL0R6C01, H_LL0R6C02, H_LL0R6C03,     KC_HOME,    KC_END,     MO(_GRK),         KC_LSFT,          KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,       KC_SLASH,   KC_K,       KC_H,       KC_DOT,     KC_COMMA,   KC_RSFT,          MO(_GREEK),       KC_UP,      KC_END,         KC_P1,      KC_P2,      KC_P3,      KC_ENTER,
+        H_LL0R7C00, H_LL0R7C01, H_LL0R7C02, H_LL0R7C03,     KC_MPRV,    KC_MNXT,    H_ML0R7C06, KC_MEH,     KC_LGUI,    KC_LALT,          KC_HYPR,          KC_SPC,           H_DL0R7C14, KC_DEL,           KC_HYPR,          KC_RALT,    KC_RGUI,          KC_MEH,     KC_LEFT,    KC_DOWN,    KC_RGHT,        KC_P0,      KC_DEL,     KC_PDOT,    KC_BSPC
        
         
     ),
@@ -421,23 +402,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * `-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
      */
     [_APL] = LAYOUT_h7v3_213(
-        FT,       FT,       FT,       FT,           FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,           FT,       FT,       FT,       FT,       
-        FT,       FT,       FT,       FT,           FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,           FT,       FT,       FT,       FT,
-        FT,       FT,       FT,       FT,           FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,           FT,       FT,       FT,       FT,
-        
-        FT,       FT,       FT,       FT,           FT,       FT,       FT,                 FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,           FT,       FT,       FT,       FT,
-        FT,       FT,       FT,       FT,           FT,       FT,       FT,            UC(0x22C0),UC(0x22C1),UC(0x22C2),UC(0x22C3),UC(0x2282),FT,    UC(0x2283),UC(0x2200),UC(0x221E),UC(0x2203),
-        FT,       FT,       FT,       FT,           FT,       FT,       FT,                 UC(0x22A5),UC(0x22C3),UC(0x22A4),
-        H_LC4X00, H_LC4X01, H_LC4X02, H_LC4X03,     KC_CUT,   KC_PASTE, KC_TAB,             KC_Q,     KC_W,     KC_F,     KC_D,     KC_P,     KC_LBRC,  KC_J,     KC_L,     KC_U,     KC_Y,     KC_SCLN,  KC_QUOTE,           KC_BSPC,  KC_COPY,  KC_HOME,      KC_P7,    KC_P7,    KC_P9,    KC_PMNS,
-		H_LC5X00, H_LC5X01, H_LC5X02, H_LC5X03,     MO(_FN),  MO(_APL), LCTL_T(KC_ESC),     KC_A,     KC_R,     KC_S,     KC_T,     KC_G,     KC_RBRC,  KC_M,     KC_N,     KC_E,     KC_I,     KC_O,                         KC_ENTER, MO(_CYR), H_MB5X23,     KC_P4,    KC_P5,    KC_P6,    KC_PPLS,
-        H_LC6X00, H_LC6X01, H_LC6X02, H_LC6X03,     KC_HOME,  KC_END,  MO(_GRK),  KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_SLASH, KC_K,     KC_H,     KC_DOT,   KC_COMMA,                     KC_RSFT,  MO(_GREEK), KC_UP,  KC_END,       KC_P1,    KC_P2,    KC_P3,    KC_ENTER,
-        H_LC7X00, H_LC7X01, H_LC7X02, H_LC7X03,     KC_MPRV,  KC_MNXT,  H_MB7X06, KC_MEH,   KC_LGUI,  KC_LALT,  KC_HYPR,  KC_SPC,   H_MB7X12, KC_DEL,   KC_HYPR,  KC_RALT,  KC_RGUI,  KC_MEH,                                 KC_LEFT,  KC_DOWN,  KC_RGHT,      KC_P0,    KC_DEL,   KC_PDOT,  KC_BSPC
-
-        FT,      FT,      FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,      FT,       FT,      FT,       FT,      FT,       FT,       FT,      FT,      FT,       FT,       FT,                  FT,      FT,       FT,      FT,
-        FT,      FT,      FT,       FT,       FT,       FT,       FT,  X(N_ARY_LOGICAL_AND), X(N_ARY_LOGICAL_OR), X(N_ARY_INTERSECT), X(N_ARY_UNION), X(SUBSET_OF),X(SUPERSET_OF), X(FORALL),X(LEMNISCATE), X(THERE_EXISTS),X(PARTIAL_DIFFERENTIAL),      FT,       FT,      FT,      FT,       FT,                            FT,      FT,       FT,      FT,
-        FT,      FT,      FT,       FT,       FT,       FT,       FT,  X(UP_TACK), X(DOWN_TACK), X(RIGHT_TACK), X(LEFT_TACK), X(UPWARDS_ARROW),X(DOWNARDS_ARROW), X(LEFTWARDS_ARROW),X(RIGHTWARDS_ARROW), X(LEFTRIGHT_ARROW),     FT,       FT,       FT,      FT,      FT,                                      FT,      FT,       FT,      FT,
-        FT,      FT,      FT,       FT,       FT,       FT,       FT,       FT,  X(LEFT_FLOOR), X(LEFT_CEILING), X(NOT_EQUAL_TO), X(ASYMPTOTICALLY_EQUAL_TO),X(NOT_ASYMPTOTICALLY_EQUAL_TO), X(LESS_THAN_OR_EQUAL),X(GREATER_THAN_OR_EQUAL),      FT,      FT,       FT,       FT,      FT,      FT,       FT,                            FT,      FT,       FT,      FT,
-        FT,      FT,      FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,      FT,       FT,      FT,       FT,      FT,       FT,       FT,      FT,      FT,                                      FT,      FT,       FT,      FT
+		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
+		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
+		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
+		
+		FT,         FT,         FT,         FT,             FT,	              FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,               FT,             FT,         FT,         FT,         FT,	
+		FT,         FT,         FT,         FT,             FT,         FT,               FT,               UC(0x22C0), UC(0x22C1), UC(0x22C2), UC(0x22C3), UC(0x2282), FT,         UC(0x2283), UC(0x2200), UC(0x221E), UC(0x2203), FT,         FT,         FT,               FT,               FT,             FT,         FT,         FT,         FT,
+		FT,         FT,         FT,         FT,             FT,               FT,              FT,                UC(0x22A5), UC(0x22A4), UC(0x22A2), UC(0x22A3), UC(0x2191), FT,         UC(0x2193), UC(0x2190), UC(0x2192), UC(0x2194), UC(0x2202), FT,                FT,                    FT,             FT,         FT,         FT,         FT,
+		FT,         FT,         FT,         FT,             FT,         FT,         FT,               FT,               UC(0x230A), UC(0x2308), UC(0x2260), UC(0x2243), UC(0x2261), FT,         UC(0x2264), UC(0x2265), FT,         FT,         FT,               FT,               FT,         FT,             FT,         FT,         FT,         FT,
+        FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,               FT,               FT,               FT,         FT,               FT,               FT,         FT,               FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT
     ),
 
     /* _GREEK: lower/upper case greek (needs shift modifier application for upper case chars) from codepage U0370.pdf \
@@ -462,10 +435,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * `-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
      */
     [_GREEK] = LAYOUT_h7v3_213(
-        FT,               FT,                 FT,                 FT,                 FT,                 FT,                FT,                FT,                 FT,                FT,               FT,                 FT,                  FT,                FT,
-        FT,               FT,                 FT,                 FT,                 FT,                 FT,                FT,                FT,                 FT,                FT,               FT,                 FT,                  FT,                FT,
-        FT,      FT,      FT,       FT,       FT,                 FT,       FT,       FT,       FT,       FT,       FT,      FT,       FT,      FT,       FT,       FT,      FT,       FT,      FT,      FT,       FT,       FT,                  FT,      FT,       FT,      FT,
-
+        FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
+		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
+		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
         FT,      FT,      FT,       FT,       FT, X(CONTOUR_INTEGRAL),  FT,  X(COPTIC_LC_DEI), X(DOUBLE_DAGGER), X(NABLA), X(CENT), X(DEGREE), X(APL_QUAD), X(DIVISION), X(MULTIPLICATION), X(PILCROW), X(LARGE_CIRCLE), X(HORIZONTAL_BAR), X(APPROXIMATELY_EQUAL_TO), X(DOUBLE_VERTICAL_LINE), X(SQUARE_IMAGE_OF), X(SQUARE_ORIGINAL_OF),       FT,       FT,                 FT,       FT,      FT,
         FT,      FT,      FT,       FT,       FT,       FT,       FT,  XP(GREEK_LC_THETA, GREEK_UC_THETA), XP(GREEK_LC_OMEGA, GREEK_UC_OMEGA), XP(GREEK_LC_EPSILON, GREEK_UC_EPSILON), XP(GREEK_LC_RHO, GREEK_UC_RHO), XP(GREEK_LC_TAU, GREEK_UC_TAU),XP(GREEK_LC_PSI, GREEK_UC_PSI), XP(GREEK_LC_UPSILON, GREEK_UC_UPSILON),XP(GREEK_LC_IOTA, GREEK_UC_IOTA), XP(GREEK_LC_OMICRON, GREEK_UC_OMICRON),XP(GREEK_LC_PI, GREEK_UC_PI), X(MATHEMATICAL_LEFT_WHITE_SQUARE_BRACKET), X(MATHEMATICAL_RIGHT_WHITE_SQUARE_BRACKET),     FT,      FT,      FT,                            FT,      FT,       FT,      FT,
         FT,      FT,      FT,       FT,       FT,       FT,       FT,  XP(GREEK_LC_ALPHA, GREEK_UC_ALPHA), XP(GREEK_LC_SIGMA, GREEK_UC_SIGMA), XP(GREEK_LC_DELTA, GREEK_UC_DELTA), XP(GREEK_LC_PHI, GREEK_UC_PHI), XP(GREEK_LC_GAMMA, GREEK_UC_GAMMA),XP(GREEK_LC_ETA, GREEK_UC_ETA), XP(GREEK_LC_YOT, GREEK_UC_YOT),XP(GREEK_LC_KAPPA, GREEK_UC_KAPPA), XP(GREEK_LC_LAMDA, GREEK_UC_LAMDA), X(TWO_DOT_LEADER), X(BULLET),      FT,      FT,      FT,                                     FT,      FT,       FT,      FT,
@@ -495,9 +467,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * `-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
      */
     [_FN] = LAYOUT_h7v3_213(
-        FT,               FT,                 FT,                 FT,                 FT,                 FT,                FT,                FT,                 FT,                FT,               FT,                 FT,                  FT,                RESET,
-        FT,               FT,                 FT,                 FT,                 FT,                 FT,                FT,                FT,                 FT,                FT,               FT,                 FT,                  FT,                FT,
-        FT,      FT,      FT,       FT,       FT,                 FT,       FT,       FT,       FT,       FT,       FT,      FT,       FT,      FT,       FT,       FT,      FT,       FT,      FT,      FT,       FT,       FT,                  FT,      FT,       FT,      FT,
+		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         RESET,
+		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
+		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
 
         FT,      FT,      FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,      FT,      FT,       FT,       FT,                  FT,      FT,       FT,      FT,
         FT,      FT,      FT,       FT,       FT,       FT,       FT,       FT,       UC_M_WI,  FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,      FT,      FT,       FT,                            FT,      FT,       FT,      FT,
