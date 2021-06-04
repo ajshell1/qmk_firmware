@@ -810,7 +810,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
 		return false;
 	case H_ML0R5C21:
 		send_string("H_ML0R5C21");
-		return false;
+		//return false;
         //if (get_mods() & MODS_SHIFT_MASK) {
         //  CLEAN_MODS(
         //    send_string(SS_TAP(X_PGUP));
