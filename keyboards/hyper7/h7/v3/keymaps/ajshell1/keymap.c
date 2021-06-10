@@ -1,10 +1,11 @@
 #include QMK_KEYBOARD_H
 
-//#include "bit-shifter.h"
+#include "ajshell1.h"
 
 // Brevity defines
 #define KN KC_NO
 #define FT KC_TRNS
+
 
 // UNICODEMAP_ENABLE
 enum unicode_names {
@@ -154,7 +155,33 @@ const uint32_t PROGMEM unicode_map[] = {
     [PRIME] = 0x2019,
     [PIPE] = 0x2502,
 
-
+// APL
+    [N_ARY_LOGICAL_AND] = 0x22C0,
+    [N_ARY_LOGICAL_OR] = 0x22C1,
+    [N_ARY_INTERSECT] = 0x22C2,
+    [N_ARY_UNION] = 0x22C3,
+    [SUBSET_OF] = 0x2282,
+    [SUPERSET_OF] = 0x2283,
+    [FORALL] = 0x2200,
+    [LEMNISCATE] = 0x221E, // ∞
+    [THERE_EXISTS] = 0x2203,
+    [PARTIAL_DIFFERENTIAL] = 0x2202,
+    [UP_TACK] = 0x22A5,
+    [DOWN_TACK] = 0x22A4,
+    [RIGHT_TACK] = 0x22A2,
+    [LEFT_TACK] = 0x22A3,
+    [UPWARDS_ARROW] = 0x2191,
+    [DOWNARDS_ARROW] = 0x2193,
+    [LEFTWARDS_ARROW] = 0x2190,
+    [RIGHTWARDS_ARROW] = 0x2192,
+    [LEFTRIGHT_ARROW] = 0x2194,
+    [LEFT_FLOOR] = 0x230A,
+    [LEFT_CEILING] = 0x2308,
+    [NOT_EQUAL_TO] = 0x2260,
+    [ASYMPTOTICALLY_EQUAL_TO] = 0x2243,
+    [NOT_ASYMPTOTICALLY_EQUAL_TO] = 0x2261,
+    [LESS_THAN_OR_EQUAL] = 0x2264,
+    [GREATER_THAN_OR_EQUAL] = 0x2265,
 // Greek
 // [main board] row 0
     [CONTOUR_INTEGRAL] = 0x222E,
@@ -306,7 +333,6 @@ enum custom_keycodes {
 	H_DL0R1C23,
 	H_DL0R1C24,
 	H_DL0R1C25,
-	H_DL0R1C26,
 	H_DL0R1C27,
 	H_DL0R2C00,
 	H_DL0R2C01,
@@ -349,7 +375,7 @@ enum custom_keycodes {
 	H_ML0R5C21,
 	H_ML0R5C23,
 	H_ML0R7C06,
-	H_ML0R7C14,
+	H_ML0R7C14
 };
 
 
@@ -405,7 +431,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //H_LC6X00, H_LC6X01, H_LC6X02, H_LC6X03,     KC_HOME,  KC_END,  MO(_GRK),  KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_SLASH, KC_K,     KC_H,     KC_DOT,   KC_COMMA,                     KC_RSFT,  MO(_GREEK), KC_UP,  KC_END,       KC_P1,    KC_P2,    KC_P3,    KC_ENTER,
         //H_LC7X00, H_LC7X01, H_LC7X02, H_LC7X03,     KC_MPRV,  KC_MNXT,  H_MB7X06, KC_MEH,   KC_LGUI,  KC_LALT,  KC_HYPR,  KC_SPC,   H_MB7X12, KC_DEL,   KC_HYPR,  KC_RALT,  KC_RGUI,  KC_MEH,                                 KC_LEFT,  KC_DOWN,  KC_RGHT,      KC_P0,    KC_DEL,   KC_PDOT,  KC_BSPC
         H_DL0R0C00, H_DL0R0C01, H_DL0R0C02, H_DL0R0C03,     H_DL0R0C04, H_DL0R0C05, H_DL0R0C06, H_DL0R0C07, H_DL0R0C08, H_DL0R0C09, H_DL0R0C10, H_DL0R0C11, H_DL0R0C12, H_DL0R0C13, H_DL0R0C14, H_DL0R0C15, H_DL0R0C16, H_DL0R0C17, H_DL0R0C18, H_DL0R0C19, H_DL0R0C20, H_DL0R0C21, H_DL0R0C22, H_DL0R0C23,     H_DL0R0C24, H_DL0R0C25, H_DL0R0C26, H_DL0R0C27,
-        H_DL0R1C00, H_DL0R1C01, H_DL0R1C02, H_DL0R1C03,     H_DL0R1C04, H_DL0R1C05, H_DL0R1C06, H_DL0R1C07, H_DL0R1C08, H_DL0R1C09, H_DL0R1C10, H_DL0R1C11, H_DL0R1C12, H_DL0R1C13, H_DL0R1C14, H_DL0R1C15, H_DL0R1C16, H_DL0R1C17, H_DL0R1C18, H_DL0R1C19, H_DL0R1C20, H_DL0R1C21, H_DL0R1C22, H_DL0R1C23,     H_DL0R1C24, H_DL0R1C25, H_DL0R1C26, H_DL0R1C27,
+        H_DL0R1C00, H_DL0R1C01, H_DL0R1C02, H_DL0R1C03,     H_DL0R1C04, H_DL0R1C05, H_DL0R1C06, H_DL0R1C07, H_DL0R1C08, H_DL0R1C09, H_DL0R1C10, H_DL0R1C11, H_DL0R1C12, H_DL0R1C13, H_DL0R1C14, H_DL0R1C15, H_DL0R1C16, H_DL0R1C17, H_DL0R1C18, H_DL0R1C19, H_DL0R1C20, H_DL0R1C21, H_DL0R1C22, H_DL0R1C23,     H_DL0R1C24, H_DL0R1C25, KC_CAPS,    H_DL0R1C27,
         H_DL0R2C00, H_DL0R2C01, H_DL0R2C02, H_DL0R2C03,     H_DL0R2C04, H_DL0R2C05, H_DL0R2C06, KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F6,      H_DL0R2C13, H_DL0R2C14, KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F11,     KC_F12,     H_DL0R2C21, H_DL0R2C22, H_DL0R2C23,     H_DL0R2C24, H_DL0R2C25, H_DL0R2C26, H_DL0R2C27,
 
 		H_LL0R3C00, H_LL0R3C01, H_LL0R3C02, H_LL0R3C03,     KC_PAUSE,         H_ML0R3C05, KC_GRAVE,   KC_1,       KC_2,       KC_3,       KC_4,       KC_5,       KC_6,       KC_BSLS,    KC_7,       KC_8,       KC_9,       KC_0,       KC_MINUS,   KC_EQUAL,   KC_DEL,     H_ML0R3C21,       KC_UNDO,        KC_NLCK,    KC_PSLS,    KC_PAST,    KC_EQL,
@@ -413,8 +439,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		H_LL0R5C00, H_LL0R5C01, H_LL0R5C02, H_LL0R5C03,     MO(_FN),          MO(_APL),        LCTL_T(KC_ESC),    KC_A,       KC_R,       KC_S,       KC_T,       KC_D,       KC_RBRC,    KC_M,       KC_N,       KC_E,       KC_I,       KC_O,       KC_ENTER,          H_ML0R5C21,            H_ML0R5C23,     KC_P4,      KC_P5,      KC_P6,      KC_PPLS,
         H_LL0R6C00, H_LL0R6C01, H_LL0R6C02, H_LL0R6C03,     KC_HOME,    KC_END,     MO(_GREEK),       KC_LSFT,          KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,       KC_SLASH,   KC_K,       KC_H,       KC_COMMA,     KC_DOT,   KC_RSFT,          MO(_GREEK),       KC_UP,      KC_END,         KC_P1,      KC_P2,      KC_P3,      KC_ENTER,
         H_LL0R7C00, H_LL0R7C01, H_LL0R7C02, H_LL0R7C03,     KC_MPRV,    KC_MNXT,    H_ML0R7C06, KC_MEH,     KC_LGUI,    KC_LALT,          KC_HYPR,          KC_SPC,           H_ML0R7C14, KC_DEL,           KC_HYPR,          KC_RALT,    KC_RGUI,          KC_MEH,     KC_LEFT,    KC_DOWN,    KC_RGHT,        KC_P0,      KC_DEL,     KC_PDOT,    KC_BSPC
-       
-        
+
+
     ),
 
     /* _APL: Cadet Symbol Layer (Default)
@@ -447,7 +473,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         FT,      FT,      FT,       FT,       FT,       FT,       FT,  X(N_ARY_LOGICAL_AND), X(N_ARY_LOGICAL_OR), X(N_ARY_INTERSECT), X(N_ARY_UNION), X(SUBSET_OF),FT,X(SUPERSET_OF), X(FORALL),X(LEMNISCATE), X(THERE_EXISTS),X(PARTIAL_DIFFERENTIAL),       FT,      FT,      FT,       FT,                            FT,      FT,       FT,      FT,
         FT,      FT,      FT,       FT,       FT,       FT,       FT,  X(UP_TACK), X(DOWN_TACK), X(RIGHT_TACK), X(LEFT_TACK), X(UPWARDS_ARROW),FT,X(DOWNARDS_ARROW), X(LEFTWARDS_ARROW),X(RIGHTWARDS_ARROW), X(LEFTRIGHT_ARROW),       FT,       FT,      FT,      FT,                                      FT,      FT,       FT,      FT,
         FT,      FT,      FT,       FT,       FT,       FT,       FT,       FT,  X(LEFT_FLOOR), X(LEFT_CEILING), X(NOT_EQUAL_TO), X(ASYMPTOTICALLY_EQUAL_TO),X(NOT_ASYMPTOTICALLY_EQUAL_TO),FT, X(LESS_THAN_OR_EQUAL),X(GREATER_THAN_OR_EQUAL),      FT,       FT,       FT,      FT,      FT,       FT,                            FT,      FT,       FT,      FT,
-        FT,      FT,      FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,      FT,       FT,      FT,       FT,      FT,       FT,       FT,      FT,      FT,                                      FT,      FT,       FT,      FT		
+        FT,      FT,      FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,      FT,       FT,      FT,       FT,      FT,       FT,       FT,      FT,      FT,                                      FT,      FT,       FT,      FT
     ),
 
     /* _GREEK: lower/upper case greek (needs shift modifier application for upper case chars) from codepage U0370.pdf \
@@ -525,10 +551,10 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
     switch(keycode) {
       // [daughter board] row 1 POS key macros
 	case H_DL0R0C00:
-		send_string("H_DL0R0C00");
+		send_string("hypercomp");
 		return false;
 	case H_DL0R0C01:
-		send_string("H_DL0R0C01");
+		send_string("hyperflash");
 		return false;
 	case H_DL0R0C02:
 		send_string("H_DL0R0C02");
@@ -608,9 +634,9 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
 	case H_DL0R0C27:
 		send_string("H_DL0R0C27");
 		return false;
-// [daughter board] row 2 POS key macros     
+// [daughter board] row 2 POS key macros
 	case H_DL0R1C00:
-		send_string("H_DL0R1C00");
+		send_string("doas pacman -Syu");
 		return false;
 	case H_DL0R1C01:
 		send_string("H_DL0R1C01");
@@ -686,9 +712,6 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
 		return false;
 	case H_DL0R1C25:
 		send_string("H_DL0R1C25");
-		return false;
-	case H_DL0R1C26:
-		send_string("H_DL0R1C26");
 		return false;
 	case H_DL0R1C27:
 		send_string("H_DL0R1C27");
@@ -810,14 +833,15 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
 		return false;
 	case H_ML0R5C21:
 		send_string("H_ML0R5C21");
-		//return false;
-        //if (get_mods() & MODS_SHIFT_MASK) {
-        //  CLEAN_MODS(
-        //    send_string(SS_TAP(X_PGUP));
-        //  );
-        //} else {
-        //  send_string(SS_TAP(X_PGDN));
-        //}
+		return false;
+    case H_ML0R5C23:
+        if (get_mods() & MODS_SHIFT_MASK) {
+          CLEAN_MODS(
+            send_string(SS_TAP(X_PGUP));
+          );
+        } else {
+          send_string(SS_TAP(X_PGDN));
+        }
 		return false;
 	case H_ML0R7C06:
 		send_string("H_ML0R7C06");
