@@ -278,7 +278,7 @@ const uint32_t PROGMEM unicode_map[] = {
 #define _FN 3     // FN & media keys
 
 enum custom_keycodes {
-    // daughter board R1
+    // daughter board R0
 	H_DL0R0C00 = SAFE_RANGE,
 	H_DL0R0C01,
 	H_DL0R0C02,
@@ -307,6 +307,7 @@ enum custom_keycodes {
 	H_DL0R0C25,
 	H_DL0R0C26,
 	H_DL0R0C27,
+    // daughter board R1
 	H_DL0R1C00,
 	H_DL0R1C01,
 	H_DL0R1C02,
@@ -334,6 +335,7 @@ enum custom_keycodes {
 	H_DL0R1C24,
 	H_DL0R1C25,
 	H_DL0R1C27,
+    // daughter board R2
 	H_DL0R2C00,
 	H_DL0R2C01,
 	H_DL0R2C02,
@@ -341,8 +343,8 @@ enum custom_keycodes {
 	H_DL0R2C04,
 	H_DL0R2C05,
 	H_DL0R2C06,
-	H_DL0R2C13,
-	H_DL0R2C14,
+	H_DL0R2C11,
+	H_DL0R2C16,
 	H_DL0R2C21,
 	H_DL0R2C22,
 	H_DL0R2C23,
@@ -350,6 +352,7 @@ enum custom_keycodes {
 	H_DL0R2C25,
 	H_DL0R2C26,
 	H_DL0R2C27,
+    //left cluster
 	H_LL0R3C00,
 	H_LL0R3C01,
 	H_LL0R3C02,
@@ -370,6 +373,7 @@ enum custom_keycodes {
 	H_LL0R7C01,
 	H_LL0R7C02,
 	H_LL0R7C03,
+    //mainboard
 	H_ML0R3C05,
 	H_ML0R3C21,
 	H_ML0R5C21,
