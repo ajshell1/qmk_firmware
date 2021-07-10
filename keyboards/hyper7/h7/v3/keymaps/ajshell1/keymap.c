@@ -421,9 +421,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         H_DL0R2C00, H_DL0R2C01, H_DL0R2C02, H_DL0R2C03,     H_DL0R2C04, H_DL0R2C05, H_DL0R2C06, KC_F1,      KC_F2,      KC_F3,      KC_F4,      H_DL0R2C11, KC_F5,      KC_F6,      KC_F7,      KC_F8,      H_DL0R2C16, KC_F9,      KC_F10,     KC_F11,     KC_F12,     H_DL0R2C21, H_DL0R2C22, H_DL0R2C23,     H_DL0R2C24, H_DL0R2C25, H_DL0R2C26, H_DL0R2C27,
 
 		H_LL0R3C00, H_LL0R3C01, H_LL0R3C02, H_LL0R3C03,     KC_PAUSE,         H_ML0R3C05, KC_GRAVE,   KC_1,       KC_2,       KC_3,       KC_4,       KC_5,       KC_6,       KC_BSLS,    KC_7,       KC_8,       KC_9,       KC_0,       KC_MINUS,   KC_EQUAL,   KC_DEL,     H_ML0R3C21,       KC_UNDO,        KC_NLCK,    KC_PSLS,    KC_PAST,    KC_EQL,
-        H_LL0R4C00, H_LL0R4C01, H_LL0R4C02, H_LL0R4C03,     KC_CUT,     KC_PASTE,         KC_TAB,           KC_Q,       KC_W,       KC_F,       KC_P,       KC_G,       KC_LBRC,    KC_J,       KC_L,       KC_U,       KC_Y,       KC_SCLN,    KC_QUOTE,   KC_BSPC,          KC_COPY,          KC_HOME,        KC_P7,      KC_P8,     KC_P9,      KC_PMNS,
-		H_LL0R5C00, H_LL0R5C01, H_LL0R5C02, H_LL0R5C03,     MO(_FN),          MO(_APL),        LCTL_T(KC_ESC),    KC_A,       KC_R,       KC_S,       KC_T,       KC_D,       KC_RBRC,    KC_M,       KC_N,       KC_E,       KC_I,       KC_O,       KC_ENTER,          H_ML0R5C21,            H_ML0R5C23,     KC_P4,      KC_P5,      KC_P6,      KC_PPLS,
-        H_LL0R6C00, H_LL0R6C01, H_LL0R6C02, H_LL0R6C03,     KC_HOME,    KC_END,     MO(_GREEK),       KC_LSFT,          KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,       KC_SLASH,   KC_K,       KC_H,       KC_COMMA,     KC_DOT,   KC_RSFT,          MO(_GREEK),       KC_UP,      KC_END,         KC_P1,      KC_P2,      KC_P3,      KC_ENTER,
+        H_LL0R4C00, H_LL0R4C01, H_LL0R4C02, H_LL0R4C03,     KC_COPY,     KC_PASTE,         KC_TAB,           KC_Q,       KC_W,       KC_F,       KC_P,       KC_G,       KC_LBRC,    KC_J,       KC_L,       KC_U,       KC_Y,       KC_SCLN,    KC_QUOTE,   KC_BSPC,          KC_CUT,          KC_HOME,        KC_P7,      KC_P8,     KC_P9,      KC_PMNS,
+		H_LL0R5C00, H_LL0R5C01, H_LL0R5C02, H_LL0R5C03,     MO(_FN),          MO(_APL),        LCTL_T(KC_ESC),    KC_A,       KC_R,       KC_S,       KC_T,       KC_D,       KC_RBRC,    KC_H,       KC_N,       KC_E,       KC_I,       KC_O,       KC_ENTER,          H_ML0R5C21,            H_ML0R5C23,     KC_P4,      KC_P5,      KC_P6,      KC_PPLS,
+        H_LL0R6C00, H_LL0R6C01, H_LL0R6C02, H_LL0R6C03,     KC_HOME,    KC_END,     MO(_GREEK),       KC_LSFT,          KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,       KC_SLASH,   KC_K,       KC_M,       KC_COMMA,     KC_DOT,   KC_RSFT,          MO(_GREEK),       KC_UP,      KC_END,         KC_P1,      KC_P2,      KC_P3,      KC_ENTER,
         H_LL0R7C00, H_LL0R7C01, H_LL0R7C02, H_LL0R7C03,     KC_MPRV,    KC_MNXT,    H_ML0R7C06, KC_MEH,     KC_LGUI,    KC_LALT,          KC_HYPR,          KC_SPC,           H_ML0R7C14, KC_DEL,           KC_HYPR,          KC_RALT,    KC_RGUI,          KC_MEH,     KC_LEFT,    KC_DOWN,    KC_RGHT,        KC_P0,      KC_DEL,     KC_PDOT,    KC_BSPC
 
 
@@ -555,7 +555,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
 		send_string("tappyttf");
 		return false;
 	case H_DL0R0C06:
-		send_string("H_DL0R0C06");
+		send_string("nmeat");
 		return false;
 	case H_DL0R0C07:
 		send_string("H_DL0R0C07");
