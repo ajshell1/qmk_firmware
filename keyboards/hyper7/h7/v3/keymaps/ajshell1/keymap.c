@@ -154,8 +154,8 @@ enum unicode_names {
     CYR_UC_DE,
     CYR_LC_DJE,
     CYR_UC_DJE,
-    CYR_LC_GJ,
-    CYR_UC_GJ,
+    CYR_LC_GJE,
+    CYR_UC_GJE,
     CYR_LC_YE,
     CYR_UC_YE,
     CYR_LC_YO,
@@ -383,8 +383,8 @@ const uint32_t PROGMEM unicode_map[] = {
     [CYR_UC_DE] = 0x0414,
     [CYR_LC_DJE] = 0x0452,
     [CYR_UC_DJE] = 0x0402,
-    [CYR_LC_GJ] = 0x0453,
-    [CYR_UC_GJ] = 0x0403,
+    [CYR_LC_GJE] = 0x0453,
+    [CYR_UC_GJE] = 0x0403,
     [CYR_LC_YE] = 0x0435,
     [CYR_UC_YE] = 0x0415,
     [CYR_LC_YO] = 0x0451,
@@ -472,6 +472,7 @@ const uint32_t PROGMEM unicode_map[] = {
 #define _APL 1    // APL symbols
 #define _GREEK 2  // Greek symbols
 #define _FN 3     // FN & media keys
+#define _CYR 4
 
 enum custom_keycodes {
     // daughter board R0
@@ -594,7 +595,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 		KC_F3,      KC_F4,      KC_F15,     KC_F16,         KC_PAUSE,         H_ML0R3C05, KC_GRAVE,   KC_1,       KC_2,       KC_3,       KC_4,       KC_5,       KC_6,       KC_BSLS,    KC_7,       KC_8,       KC_9,       KC_0,       KC_MINUS,   KC_EQUAL,   KC_DEL,     H_ML0R3C21,       KC_UNDO,        KC_NLCK,    KC_PSLS,    KC_PAST,    KC_EQL,
         KC_F5,      KC_F6,      KC_F17,     KC_F18,         KC_COPY,     KC_PASTE,         KC_TAB,           KC_Q,       KC_W,       KC_F,       KC_P,       KC_G,       KC_LBRC,    KC_J,       KC_L,       KC_U,       KC_Y,       KC_SCLN,    KC_QUOTE,   KC_BSPC,          KC_CUT,          KC_HOME,        KC_P7,      KC_P8,     KC_P9,      KC_PMNS,
-	    KC_F7,      KC_F8,      KC_F19,     KC_F20,         MO(_FN),          MO(_APL),        LCTL_T(KC_ESC),    KC_A,       KC_R,       KC_S,       KC_T,       KC_D,       KC_RBRC,    KC_H,       KC_N,       KC_E,       KC_I,       KC_O,       KC_ENTER,          H_ML0R5C21,            H_ML0R5C23,     KC_P4,      KC_P5,      KC_P6,      KC_PPLS,
+	    KC_F7,      KC_F8,      KC_F19,     KC_F20,         MO(_FN),          MO(_APL),        LCTL_T(KC_ESC),    KC_A,       KC_R,       KC_S,       KC_T,       KC_D,       KC_RBRC,    KC_H,       KC_N,       KC_E,       KC_I,       KC_O,       KC_ENTER,          MO(_CYR),              H_ML0R5C23,     KC_P4,      KC_P5,      KC_P6,      KC_PPLS,
         KC_F9,      KC_F10,     KC_F21,     KC_F22,         KC_HOME,    KC_END,     MO(_GREEK),       KC_LSFT,          KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,       KC_SLASH,   KC_K,       KC_M,       KC_COMMA,     KC_DOT,   KC_RSFT,          MO(_GREEK),       KC_UP,      KC_END,         KC_P1,      KC_P2,      KC_P3,      KC_ENTER,
         KC_F11,     KC_F12,     KC_F23,     KC_F23,         KC_MPRV,    KC_MNXT,    H_ML0R7C06, KC_MEH,     KC_LGUI,    KC_LALT,          KC_HYPR,          KC_SPC,           H_ML0R7C14, KC_DEL,           KC_HYPR,          KC_RALT,    KC_RGUI,          KC_MEH,     KC_LEFT,    KC_DOWN,    KC_RGHT,        KC_P0,      KC_DEL,     KC_PDOT,    KC_BSPC
 
@@ -697,7 +698,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         FT,      FT,      FT,       FT,       FT,       UC_MOD,   FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       UC_M_LN,  FT,       FT,       FT,      FT,      FT,                                      FT,      FT,       FT,      FT,
         FT,      FT,      FT,       FT,   FT,       FT,       FT,       FT,       FT,       FT,       UC_M_WC,  FT,       FT,       FT,       UC_M_MA,  FT,       FT,       FT,       FT,      FT,      FT,       FT,                            FT,      FT,       FT,      FT,
         FT,      FT,      FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,      FT,      FT,                                      FT,      FT,       FT,      FT
-    )
+    ),
         /* _CYR: Cyrillic
      * ,-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
      * |           |           |#|           |           |           |           |           |           |           |           |           |           |#|           |           |
@@ -720,6 +721,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * `-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
      */
     [_CYR] = LAYOUT_h7v3_213(
+             FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
+		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
+		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
+        FT,      FT,      FT,       FT,       FT,       FT,       FT,  XP(CYR_LC_YA, CYR_UC_YA),XP(CYR_LC_YU, CYR_UC_YU),XP(CYR_LC_EF, CYR_UC_EF),XP(CYR_LC_PE, CYR_UC_PE),XP(CYR_LC_GE, CYR_UC_GE),XP(CYR_LC_TSE, CYR_UC_TSE),XP(CYR_LC_SHORTI, CYR_UC_SHORTI),XP(CYR_LC_EL, CYR_UC_EL),XP(CYR_LC_U, CYR_UC_U),XP(CYR_LC_YERY, CYR_UC_YERY),XP(CYR_LC_E, CYR_UC_E),XP(CYR_LC_YO, CYR_UC_YO),     FT,      FT,      FT,                            FT,      FT,       FT,      FT,
+        FT,      FT,      FT,       FT,       FT,       FT,       FT,  XP(CYR_LC_A, CYR_UC_A),XP(CYR_LC_ER, CYR_UC_ER),XP(CYR_LC_ES, CYR_UC_ES),XP(CYR_LC_TE, CYR_UC_TE),XP(CYR_LC_DE, CYR_UC_DE),XP(CYR_LC_SHCHA, CYR_UC_SHCHA),XP(CYR_LC_ZHE, CYR_UC_ZHE),XP(CYR_LC_EN, CYR_UC_EN),XP(CYR_LC_YE, CYR_UC_YE),XP(CYR_LC_I, CYR_UC_I),XP(CYR_LC_O, CYR_UC_O),      FT,      FT,      FT,                                     FT,      FT,       FT,      FT,
+        FT,      FT,      FT,       FT,       FT,       FT,       FT,  FT,  XP(CYR_LC_ZE, CYR_UC_ZE),XP(CYR_LC_KHA, CYR_UC_KHA),XP(CYR_LC_CHE, CYR_UC_CHE),XP(CYR_LC_VE, CYR_UC_VE),XP(CYR_LC_BE, CYR_UC_BE),XP(CYR_LC_SHA, CYR_UC_SHA),XP(CYR_LC_KA, CYR_UC_KA),XP(CYR_LC_EM, CYR_UC_EM),XP(CYR_LC_YERI, CYR_UC_YERI),XP(CYR_LC_YER, CYR_UC_YER),      FT,      FT,      FT,      FT,                            FT,      FT,       FT,      FT,
+        FT,      FT,      FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,      FT,       FT,      FT,       FT,      FT,       FT,       FT,      FT,      FT,                                     FT,      FT,       FT,      FT
         )
 };
 
