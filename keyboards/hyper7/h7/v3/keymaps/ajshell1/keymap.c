@@ -54,6 +54,7 @@ enum unicode_names {
 
 // [main board] row 0
     CONTOUR_INTEGRAL,
+    NEGATION,
     COPTIC_LC_DEI,
     DOUBLE_DAGGER,
     NABLA,
