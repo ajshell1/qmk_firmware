@@ -336,8 +336,6 @@ enum custom_keycodes {
 	H_DL0R1C25,
 	H_DL0R1C27,
     // daughter board R2
-	H_DL0R2C00,
-	H_DL0R2C01,
 	H_DL0R2C02,
 	H_DL0R2C03,
 	H_DL0R2C04,
@@ -353,26 +351,6 @@ enum custom_keycodes {
 	H_DL0R2C26,
 	H_DL0R2C27,
     //left cluster
-	H_LL0R3C00,
-	H_LL0R3C01,
-	H_LL0R3C02,
-	H_LL0R3C03,
-	H_LL0R4C00,
-	H_LL0R4C01,
-	H_LL0R4C02,
-	H_LL0R4C03,
-	H_LL0R5C00,
-	H_LL0R5C01,
-	H_LL0R5C02,
-	H_LL0R5C03,
-	H_LL0R6C00,
-	H_LL0R6C01,
-	H_LL0R6C02,
-	H_LL0R6C03,
-	H_LL0R7C00,
-	H_LL0R7C01,
-	H_LL0R7C02,
-	H_LL0R7C03,
     //mainboard
 	H_ML0R3C05,
 	H_ML0R3C21,
@@ -752,66 +730,6 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
 		return false;
 	case H_DL0R2C27:
 		send_string("H_DL0R2C27");
-		return false;
-	case H_LL0R3C00:
-		send_string("H_LL0R3C00");
-		return false;
-	case H_LL0R3C01:
-		send_string("H_LL0R3C01");
-		return false;
-	case H_LL0R3C02:
-		send_string("H_LL0R3C02");
-		return false;
-	case H_LL0R3C03:
-		send_string("H_LL0R3C03");
-		return false;
-	case H_LL0R4C00:
-		send_string("H_LL0R4C00");
-		return false;
-	case H_LL0R4C01:
-		send_string("H_LL0R4C01");
-		return false;
-	case H_LL0R4C02:
-		send_string("H_LL0R4C02");
-		return false;
-	case H_LL0R4C03:
-		send_string("H_LL0R4C03");
-		return false;
-	case H_LL0R5C00:
-		send_string("H_LL0R5C00");
-		return false;
-	case H_LL0R5C01:
-		send_string("H_LL0R5C01");
-		return false;
-	case H_LL0R5C02:
-		send_string("H_LL0R5C02");
-		return false;
-	case H_LL0R5C03:
-		send_string("H_LL0R5C03");
-		return false;
-	case H_LL0R6C00:
-		send_string("H_LL0R6C00");
-		return false;
-	case H_LL0R6C01:
-		send_string("H_LL0R6C01");
-		return false;
-	case H_LL0R6C02:
-		send_string("H_LL0R6C02");
-		return false;
-	case H_LL0R6C03:
-		send_string("H_LL0R6C03");
-		return false;
-	case H_LL0R7C00:
-		send_string("H_LL0R7C00");
-		return false;
-	case H_LL0R7C01:
-		send_string("H_LL0R7C01");
-		return false;
-	case H_LL0R7C02:
-		send_string("H_LL0R7C02");
-		return false;
-	case H_LL0R7C03:
-		send_string("H_LL0R7C03");
 		return false;
 	case H_ML0R3C05:
 		send_string("H_ML0R3C05");
