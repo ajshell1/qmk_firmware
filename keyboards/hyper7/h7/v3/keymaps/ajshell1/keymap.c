@@ -186,6 +186,7 @@ const uint32_t PROGMEM unicode_map[] = {
 // [main board] row 0
     [CONTOUR_INTEGRAL] = 0x222E,
     [COPTIC_LC_DEI] = 0x03EF,
+    [NEGATION] = 0x00AC,
     [DOUBLE_DAGGER] = 0x2021,
     [NABLA] = 0x2207,
     [CENT] = 0x00A2,
@@ -448,13 +449,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
      * |###############################################################################################################################################################################|
      * |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-     * |     |     |     |     |#|        |  ∮  |     |  ϯ  |  ‡  |  ∇  |  ¢  |  °  |  ⎕  |  ÷  |  ×  |  ¶  |  ◯  |  ―  |  ≈  |  ‖  |  ⊏  |  ⊐  |        |#|     |     |     |     |
+     * |     |     |     |     |#|        |  ∮  |  ¬  |  ϯ  |  ‡  |  ∇  |  ¢  |  °  |  ⎕  |  ‖  |  ÷  |  ×  |  ¶  |  ◯  |  ―  |  ≈  |  ⊏  |  ⊐  |        |#|     |     |     |     |
      * |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-     * |     |     |     |     |#|     |        |        | θ/Θ | ω/Ω | ε/Ε | ρ/Ρ | τ/Τ | ψ/Ψ | υ/Υ | ι/Ι | ο/Ο | π/Π |  ⟦  |  ⟧  |        |        |      |#|     |     |     |     |
+     * |     |     |     |     |#|     |        |        | ξ/Ξ | ς/Σ | φ/Φ | π/Π | γ/Γ |  ⟦   | ϳ/Ϳ | λ/Λ | θ/Θ | υ/Υ  |  ‥  |  •  |        |        |      |#|     |     |     |     |
      * |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-     * |     |     |     |     |#|        |        |        | α/Α | σ/Σ | δ/Δ | φ/Φ | γ/Γ | η/Η  | ϳ/Ϳ | κ/Κ | λ/Λ |  ‥  |  •  |        |        |        |#|     |     |     |     |
+     * |     |     |     |     |#|        |        |        | α/Α | ρ/Ρ | σ/Σ | τ/Τ | δ/Δ |  ⟧   | η/Η | ν/Ν | ε/Ε | ι/Ι | ο/Ο |        |        |        |#|     |     |     |     |
      * |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-     * |     |     |     |     |#|     |     |         | SHIFT | ζ/Ζ  | ξ/Ξ | χ/Χ | ς/Σ | β/Β | ν/Ν | μ/Μ |  ≪  |  ≫  |  ∫  |        |        |     |     |#|     |     |     |     |
+     * |     |     |     |     |#|     |     |         | SHIFT | ζ/Ζ  | χ/Χ | ψ/Ψ | ω/Ω |  β/Β | ∫ | κ/Κ | μ/Μ |  ≪  |  ≫  |        |        |     |     |#|     |     |     |     |
      * |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
      * |     |     |     |     |#|     |     |     |     |        |     |        |        |     |        |        |     |        |     |     |     |     |#|     |     |     |     |
      * `-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
@@ -463,7 +464,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
 		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
 		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
-        FT,      FT,      FT,       FT,       FT, X(CONTOUR_INTEGRAL),  FT,  X(COPTIC_LC_DEI), X(DOUBLE_DAGGER), X(NABLA), X(CENT), X(DEGREE), X(APL_QUAD), X(DIVISION), X(MULTIPLICATION), X(PILCROW), X(LARGE_CIRCLE), X(HORIZONTAL_BAR), X(APPROXIMATELY_EQUAL_TO), X(DOUBLE_VERTICAL_LINE), X(SQUARE_IMAGE_OF), X(SQUARE_ORIGINAL_OF),       FT,       FT,                 FT,       FT,      FT,
+        FT,      FT,      FT,       FT,       FT, X(CONTOUR_INTEGRAL),  X(NEGATION),  X(COPTIC_LC_DEI), X(DOUBLE_DAGGER), X(NABLA), X(CENT), X(DEGREE), X(APL_QUAD), X(DOUBLE_VERTICAL_LINE), X(DIVISION), X(MULTIPLICATION), X(PILCROW), X(LARGE_CIRCLE), X(HORIZONTAL_BAR), X(APPROXIMATELY_EQUAL_TO), X(SQUARE_IMAGE_OF), X(SQUARE_ORIGINAL_OF),       FT,       FT,                 FT,       FT,      FT,
         FT,      FT,      FT,       FT,       FT,       FT,       FT,  XP(GREEK_LC_THETA, GREEK_UC_THETA), XP(GREEK_LC_OMEGA, GREEK_UC_OMEGA), XP(GREEK_LC_EPSILON, GREEK_UC_EPSILON), XP(GREEK_LC_RHO, GREEK_UC_RHO), XP(GREEK_LC_TAU, GREEK_UC_TAU),XP(GREEK_LC_PSI, GREEK_UC_PSI), XP(GREEK_LC_UPSILON, GREEK_UC_UPSILON),XP(GREEK_LC_IOTA, GREEK_UC_IOTA), XP(GREEK_LC_OMICRON, GREEK_UC_OMICRON),XP(GREEK_LC_PI, GREEK_UC_PI), X(MATHEMATICAL_LEFT_WHITE_SQUARE_BRACKET), X(MATHEMATICAL_RIGHT_WHITE_SQUARE_BRACKET),     FT,      FT,      FT,                            FT,      FT,       FT,      FT,
         FT,      FT,      FT,       FT,       FT,       FT,       FT,  XP(GREEK_LC_ALPHA, GREEK_UC_ALPHA), XP(GREEK_LC_SIGMA, GREEK_UC_SIGMA), XP(GREEK_LC_DELTA, GREEK_UC_DELTA), XP(GREEK_LC_PHI, GREEK_UC_PHI), XP(GREEK_LC_GAMMA, GREEK_UC_GAMMA),XP(GREEK_LC_ETA, GREEK_UC_ETA), XP(GREEK_LC_YOT, GREEK_UC_YOT),XP(GREEK_LC_KAPPA, GREEK_UC_KAPPA), XP(GREEK_LC_LAMDA, GREEK_UC_LAMDA), X(TWO_DOT_LEADER), X(BULLET),      FT,      FT,      FT,                                     FT,      FT,       FT,      FT,
         FT,      FT,      FT,       FT,       FT,       FT,       FT,  FT,  XP(GREEK_LC_ZETA, GREEK_UC_ZETA), XP(GREEK_LC_XI, GREEK_UC_XI), XP(GREEK_LC_CHI, GREEK_UC_CHI), XP(GREEK_LC_FINAL_SIGMA, GREEK_UC_SIGMA),XP(GREEK_LC_BETA, GREEK_UC_BETA), XP(GREEK_LC_NU, GREEK_UC_NU),XP(GREEK_LC_MU, GREEK_UC_MU), X(MUCH_LESS_THAN),X(MUCH_GREATER_THAN), X(INTEGRAL),      FT,      FT,      FT,      FT,                            FT,      FT,       FT,      FT,
