@@ -471,8 +471,8 @@ const uint32_t PROGMEM unicode_map[] = {
 #define _BASE 0   // Base layer
 #define _APL 1    // APL symbols
 #define _GREEK 2  // Greek symbols
-#define _FN 3     // FN & media keys
-#define _CYR 4
+#define _FN 4     // FN & media keys
+#define _CYR 3
 
 enum custom_keycodes {
     // daughter board R0
