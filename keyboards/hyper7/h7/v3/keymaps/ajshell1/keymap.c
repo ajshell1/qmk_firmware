@@ -7,7 +7,7 @@
 #define FT KC_TRNS
 
 
-// UNICODEMAP_ENABLE
+//order doesn't matter here
 enum unicode_names {
     //AT_SYMBOL,
     //GBP,
@@ -217,7 +217,8 @@ enum unicode_names {
     NOT_ASYMPTOTICALLY_EQUAL_TO,
     LESS_THAN_OR_EQUAL,
     GREATER_THAN_OR_EQUAL,
-
+	
+//greek layer, dropped for the 128 rule:
 // [main board] row 0
     CONTOUR_INTEGRAL,
     NEGATION,
@@ -237,7 +238,7 @@ enum unicode_names {
     SQUARE_IMAGE_OF,
     SQUARE_ORIGINAL_OF,
     
-  //greek layer, dropped for the 128 rule:
+
     MATHEMATICAL_LEFT_WHITE_SQUARE_BRACKET,
     MATHEMATICAL_RIGHT_WHITE_SQUARE_BRACKET,
     TWO_DOT_LEADER,
@@ -245,6 +246,8 @@ enum unicode_names {
 };
 
 const uint32_t PROGMEM unicode_map[] = {
+//ORDER MATTERS HERE.
+//Only the first 128 will work with XP(i, j)
 // Unicode char definitions
     //[AT_SYMBOL] = 0x0040,
     //[GBP] = 0x00A3,
@@ -263,26 +266,6 @@ const uint32_t PROGMEM unicode_map[] = {
 
 
 // Greek
-// [main board] row 0
-    [CONTOUR_INTEGRAL] = 0x222E,
-    [COPTIC_LC_DEI] = 0x03EF,
-    [NEGATION] = 0x00AC,
-    [DOUBLE_DAGGER] = 0x2021,
-    [NABLA] = 0x2207,
-    [CENT] = 0x00A2,
-    [DEGREE] = 0x00B0,
-    [APL_QUAD] = 0x2395,
-    [DIVISION] = 0x00F7,
-    [MULTIPLICATION] = 0x00D7,
-    [PILCROW] = 0x00B6,
-    [LARGE_CIRCLE] = 0x25EF,
-//  [THREE_EM_DASH] = 0x2E3B,
-    [HORIZONTAL_BAR] = 0x2015,
-    [APPROXIMATELY_EQUAL_TO] = 0x2248,
-    [DOUBLE_VERTICAL_LINE] = 0x2016,
-    [SQUARE_IMAGE_OF] = 0x228F,
-    [SQUARE_ORIGINAL_OF] = 0x2290,
-
 
 // [main board] row 1
     [GREEK_LC_THETA] = 0x03B8,
@@ -473,6 +456,26 @@ const uint32_t PROGMEM unicode_map[] = {
     [NOT_ASYMPTOTICALLY_EQUAL_TO] = 0x2261,
     [LESS_THAN_OR_EQUAL] = 0x2264,
     [GREATER_THAN_OR_EQUAL] = 0x2265,
+	//Greek layer, nonshifted
+	// [main board] row 0
+    [CONTOUR_INTEGRAL] = 0x222E,
+    [COPTIC_LC_DEI] = 0x03EF,
+    [NEGATION] = 0x00AC,
+    [DOUBLE_DAGGER] = 0x2021,
+    [NABLA] = 0x2207,
+    [CENT] = 0x00A2,
+    [DEGREE] = 0x00B0,
+    [APL_QUAD] = 0x2395,
+    [DIVISION] = 0x00F7,
+    [MULTIPLICATION] = 0x00D7,
+    [PILCROW] = 0x00B6,
+    [LARGE_CIRCLE] = 0x25EF,
+//  [THREE_EM_DASH] = 0x2E3B,
+    [HORIZONTAL_BAR] = 0x2015,
+    [APPROXIMATELY_EQUAL_TO] = 0x2248,
+    [DOUBLE_VERTICAL_LINE] = 0x2016,
+    [SQUARE_IMAGE_OF] = 0x228F,
+    [SQUARE_ORIGINAL_OF] = 0x2290,
 };
 
 /*
