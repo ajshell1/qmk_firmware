@@ -1,6 +1,6 @@
 #include QMK_KEYBOARD_H
-
 #include "ajshell1.h"
+#include keymap_colemak.h
 
 // Brevity defines
 #define KN KC_NO
