@@ -287,9 +287,6 @@ const uint32_t PROGMEM unicode_map[] = {
     [GREEK_UC_OMICRON] = 0x039F,
     [GREEK_LC_PI] = 0x03C0,
     [GREEK_UC_PI] = 0x03A0,
-    [MATHEMATICAL_LEFT_WHITE_SQUARE_BRACKET] = 0x27E6,
-    [MATHEMATICAL_RIGHT_WHITE_SQUARE_BRACKET] = 0x27E7,
-
 // [main board] row 2
     [GREEK_LC_ALPHA] = 0x03B1,
     [GREEK_UC_ALPHA] = 0x0391,
@@ -309,8 +306,6 @@ const uint32_t PROGMEM unicode_map[] = {
     [GREEK_UC_KAPPA] = 0x039A,
     [GREEK_LC_LAMDA] = 0x03BB,
     [GREEK_UC_LAMDA] = 0x039B,
-    [TWO_DOT_LEADER] = 0x2025,
-    [BULLET] = 0x2022,
 
 // [main board] row 3
     [GREEK_LC_ZETA] = 0x03B6,
@@ -327,9 +322,7 @@ const uint32_t PROGMEM unicode_map[] = {
     [GREEK_UC_NU] = 0x039D,
     [GREEK_LC_MU] = 0x03BC,
     [GREEK_UC_MU] = 0x039C,
-    [MUCH_LESS_THAN] = 0x226A,
-    [MUCH_GREATER_THAN] = 0x226B,
-    [INTEGRAL] = 0x222B,
+
     //Cyrillic
     //ORDER TAKEN FROM HERE:
     //https://en.wikipedia.org/wiki/Cyrillic_script
@@ -475,6 +468,13 @@ const uint32_t PROGMEM unicode_map[] = {
     [DOUBLE_VERTICAL_LINE] = 0x2016,
     [SQUARE_IMAGE_OF] = 0x228F,
     [SQUARE_ORIGINAL_OF] = 0x2290,
+    [MATHEMATICAL_LEFT_WHITE_SQUARE_BRACKET] = 0x27E6,
+    [MATHEMATICAL_RIGHT_WHITE_SQUARE_BRACKET] = 0x27E7,
+    [MUCH_LESS_THAN] = 0x226A,
+    [MUCH_GREATER_THAN] = 0x226B,
+    [INTEGRAL] = 0x222B,
+    [TWO_DOT_LEADER] = 0x2025,
+    [BULLET] = 0x2022,
 };
 
 /*
