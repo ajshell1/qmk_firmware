@@ -270,6 +270,25 @@ HEB_QOF,
 HEB_RESH,
 HEB_SHIN,
 HEB_TAV,
+    HEB_P_SHEVA,
+HEB_P_HATAF_SEGOL,
+HEB_P_HATAF_PATAH,
+HEB_P_HATAF_QAMATS,
+HEB_P_HIRIQ,
+HEB_P_TSERE,
+HEB_P_SEGOL,
+HEB_P_PATAH,
+HEB_P_QAMATS,
+HEB_P_HOLAM,
+HEB_P_HOLAM_HASER_VAV,
+HEB_P_QUBUTS,
+HEB_P_DAGESH_MAPIQ,
+HEB_P_METEG,
+HEB_PUNCT_MAQA,
+HEB_P_RAFE,
+HEB_PUNCT_PASEQ,
+HEB_P_SHIN_DOT,
+HEB_P_SIN_DOT,
 };
 
 const uint32_t PROGMEM unicode_map[] = {
@@ -531,6 +550,27 @@ const uint32_t PROGMEM unicode_map[] = {
 [HEB_RESH] = 0x05E8,
 [HEB_SHIN] = 0x05E9,
 [HEB_TAV] = 0x05EA,
+    //ADDITIONAL HEBREW
+    [HEB_P_SHEVA] = 0x05B0,
+[HEB_P_HATAF_SEGOL] = 0x05B1,
+[HEB_P_HATAF_PATAH] = 0x05B2,
+[HEB_P_HATAF_QAMATS] = 0x05B3,
+[HEB_P_HIRIQ] = 0x05B4,
+[HEB_P_TSERE] = 0x05B5,
+[HEB_P_SEGOL] = 0x05B6,
+[HEB_P_PATAH] = 0x05B7,
+[HEB_P_QAMATS] = 0x05B8,
+[HEB_P_HOLAM] = 0x05B9,
+[HEB_P_HOLAM_HASER_VAV] = 0x05BA,
+[HEB_P_QUBUTS] = 0x05BB,
+[HEB_P_DAGESH_MAPIQ] = 0x05BC,
+[HEB_P_METEG] = 0x05BD,
+[HEB_PUNCT_MAQAF] = 0x05BE,
+[HEB_P_RAFE] = 0x05BF,
+[HEB_PUNCT_PASEQ] = 0x05C0,
+[HEB_P_SHIN_DOT] = 0x05C1,
+[HEB_P_SIN_DOT] = 0x05C2,
+[HEB_P_SIN_DOT] = 0x05C2,
 };
 
 /*
@@ -541,6 +581,7 @@ const uint32_t PROGMEM unicode_map[] = {
 #define _GREEK 2  // Greek symbols
 #define _FN 4     // FN & media keys
 #define _CYR 3
+#define _HEB 5
 
 enum custom_keycodes {
     // daughter board R0
@@ -662,7 +703,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_F1,      KC_F2,      KC_F13,     KC_F14,         H_DL0R2C04,    H_DL0R2C05, H_DL0R2C06, KC_F1,      KC_F2,      KC_F3,      KC_F4,      H_DL0R2C11, KC_F5,      KC_F6,      KC_F7,      KC_F8,      H_DL0R2C16, KC_F9,      KC_F10,     KC_F11,     KC_F12,     H_DL0R2C21, H_DL0R2C22, H_DL0R2C23,     H_DL0R2C24, H_DL0R2C25, H_DL0R2C26, H_DL0R2C27,
 
 		KC_F3,      KC_F4,      KC_F15,     KC_F16,         KC_PAUSE,         KC_SLCK,        KC_GRAVE,   KC_1,       KC_2,       KC_3,       KC_4,       KC_5,       KC_6,       KC_BSLS,    KC_7,       KC_8,       KC_9,       KC_0,       KC_MINUS,   KC_EQUAL,   KC_DEL,     KC_CAPS,      KC_PSCR,            KC_NLCK,    KC_PSLS,    KC_PAST,    KC_EQL,
-        KC_F5,      KC_F6,      KC_F17,     KC_F18,         C(KC_INS),     S(KC_INS),         KC_TAB,           KC_Q,       KC_W,       KC_F,       KC_P,       KC_G,       KC_LBRC,    KC_J,       KC_L,       KC_U,       KC_Y,       KC_SCLN,    KC_QUOTE,   KC_BSPC,           KC_CUT,          KC_HOME,        KC_P7,      KC_P8,     KC_P9,      KC_PMNS,
+        KC_F5,      KC_F6,      KC_F17,     KC_F18,         C(KC_INS),     S(KC_INS),         KC_TAB,           KC_Q,       KC_W,       KC_F,       KC_P,       KC_G,       KC_LBRC,    KC_J,       KC_L,       KC_U,       KC_Y,       KC_SCLN,    KC_QUOTE,   KC_BSPC,           MO(_HEB),          KC_HOME,        KC_P7,      KC_P8,     KC_P9,      KC_PMNS,
 	    KC_F7,      KC_F8,      KC_F19,     KC_F20,         MO(_FN),          MO(_APL),        LCTL_T(KC_ESC),    KC_A,       KC_R,       KC_S,       KC_T,       KC_D,       KC_RBRC,    KC_H,       KC_N,       KC_E,       KC_I,       KC_O,       KC_ENTER,          MO(_CYR),              H_ML0R5C23,         KC_P4,      KC_P5,      KC_P6,      KC_PPLS,
         KC_F9,      KC_F10,     KC_F21,     KC_F22,         KC_HOME,    KC_END,     MO(_GREEK),       KC_LSFT,          KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,       KC_SLASH,   KC_K,       KC_M,       KC_COMMA,     KC_DOT,   KC_RSFT,          MO(_GREEK),           KC_UP,      KC_END,         KC_P1,      KC_P2,      KC_P3,      KC_ENTER,
         KC_F11,     KC_F12,     KC_F23,     KC_F23,         KC_VOLD,    KC_VOLU,    KC_MUTE,   KC_MEH,     KC_LGUI,    KC_LALT,          KC_LCTRL,          KC_SPC,           MO(_FN),         KC_DEL,           KC_RCTRL,         KC_RALT,    KC_RGUI,          KC_APP,     KC_LEFT,    KC_DOWN,    KC_RGHT,        KC_P0,      KC_DEL,     KC_PDOT,    KC_BSPC
@@ -799,6 +840,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         FT,      FT,      FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,      FT,       FT,      FT,       FT,      FT,       FT,       FT,      FT,      FT,                                     FT,      FT,       FT,      FT
         )
 };
+
+  [_HEB] = LAYOUT_h7v3_213(
+		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         RESET,
+		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
+		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
+
+        FT,         FT,         FT,         FT,             FT,       FT,       FT,       ,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,      FT,      FT,       FT,       FT,                  FT,      FT,       FT,      FT,
+        FT,         FT,         FT,         FT,             FT,       FT,       FT,       X(HEB_QOF),X(HEB_VAV),  KC_F,X(HED_PE),X(HEB_GIMEL),X(HEB_TSADI),KC_J,X(HEB_LAMED),       FT,       FT,       FT,       FT,      FT,      FT,       FT,                            FT,      FT,       FT,      FT,
+        FT,         FT,         FT,         FT,             FT,       FT,       FT,       X(HEB_ALEF),X(HEB_RESH),X(HEB_SAMEKH),X(HEB_TAV),X(HEB_DALET),FT,FT,       X(HEB_NUN),X(HEB_HE),X(HEB_YOD),X(HEB_AYIN),       FT,      FT,      FT,                                      FT,      FT,       FT,      FT,
+        FT,         FT,         FT,         FT,             FT,       FT,       FT,       FT,       X(HEB_ZAYIN),X(HEB_HET),           KC_C,  KC_V,       X(HEB_BET),       X(HEB_SHIN),      X(HEB_KAF),  X(HEB_MEM),       FT,       FT,       FT,      FT,      FT,       FT,                            FT,      FT,       FT,      FT,
+        FT,         FT,         FT,         FT,             FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,      FT,      FT,                                      FT,      FT,       FT,      FT
+    ),
 
 void matrix_init_keymap(void) {}
 
