@@ -838,7 +838,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         FT,      FT,      FT,       FT,       FT,       FT,       FT,  XP(CYR_LC_A, CYR_UC_A),XP(CYR_LC_ER, CYR_UC_ER),XP(CYR_LC_ES, CYR_UC_ES),XP(CYR_LC_TE, CYR_UC_TE),XP(CYR_LC_DE, CYR_UC_DE),XP(CYR_LC_SHCHA, CYR_UC_SHCHA),XP(CYR_LC_ZHE, CYR_UC_ZHE),XP(CYR_LC_EN, CYR_UC_EN),XP(CYR_LC_YE, CYR_UC_YE),XP(CYR_LC_I, CYR_UC_I),XP(CYR_LC_O, CYR_UC_O),      FT,      FT,      FT,                                     FT,      FT,       FT,      FT,
         FT,      FT,      FT,       FT,       FT,       FT,       FT,  FT,  XP(CYR_LC_ZE, CYR_UC_ZE),XP(CYR_LC_KHA, CYR_UC_KHA),XP(CYR_LC_CHE, CYR_UC_CHE),XP(CYR_LC_VE, CYR_UC_VE),XP(CYR_LC_BE, CYR_UC_BE),XP(CYR_LC_SHA, CYR_UC_SHA),XP(CYR_LC_KA, CYR_UC_KA),XP(CYR_LC_EM, CYR_UC_EM),XP(CYR_LC_YERI, CYR_UC_YERI),XP(CYR_LC_YER, CYR_UC_YER),      FT,      FT,      FT,      FT,                            FT,      FT,       FT,      FT,
         FT,      FT,      FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,      FT,       FT,      FT,       FT,      FT,       FT,       FT,      FT,      FT,                                     FT,      FT,       FT,      FT
-        )
+        ),
 
 
   [_HEB] = LAYOUT_h7v3_213(
@@ -851,7 +851,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         FT,         FT,         FT,         FT,             FT,       FT,       FT,       X(HEB_ALEF),X(HEB_RESH),X(HEB_SAMEKH),X(HEB_TAV),X(HEB_DALET),FT,FT,       X(HEB_NUN),X(HEB_HE),X(HEB_YOD),X(HEB_AYIN),       FT,      FT,      FT,                                      FT,      FT,       FT,      FT,
         FT,         FT,         FT,         FT,             FT,       FT,       FT,       FT,       X(HEB_ZAYIN),X(HEB_HET),           KC_C,  KC_V,       X(HEB_BET),       X(HEB_SHIN),      X(HEB_KAF),  X(HEB_MEM),       FT,       FT,       FT,      FT,      FT,       FT,                            FT,      FT,       FT,      FT,
         FT,         FT,         FT,         FT,             FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,      FT,      FT,                                      FT,      FT,       FT,      FT
-    ),
+    )
 };    
 
 void matrix_init_keymap(void) {}
