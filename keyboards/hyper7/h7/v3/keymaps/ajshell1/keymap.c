@@ -839,7 +839,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         FT,      FT,      FT,       FT,       FT,       FT,       FT,  FT,  XP(CYR_LC_ZE, CYR_UC_ZE),XP(CYR_LC_KHA, CYR_UC_KHA),XP(CYR_LC_CHE, CYR_UC_CHE),XP(CYR_LC_VE, CYR_UC_VE),XP(CYR_LC_BE, CYR_UC_BE),XP(CYR_LC_SHA, CYR_UC_SHA),XP(CYR_LC_KA, CYR_UC_KA),XP(CYR_LC_EM, CYR_UC_EM),XP(CYR_LC_YERI, CYR_UC_YERI),XP(CYR_LC_YER, CYR_UC_YER),      FT,      FT,      FT,      FT,                            FT,      FT,       FT,      FT,
         FT,      FT,      FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,      FT,       FT,      FT,       FT,      FT,       FT,       FT,      FT,      FT,                                     FT,      FT,       FT,      FT
         )
-};
+
 
   [_HEB] = LAYOUT_h7v3_213(
 		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         RESET,
@@ -852,6 +852,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         FT,         FT,         FT,         FT,             FT,       FT,       FT,       FT,       X(HEB_ZAYIN),X(HEB_HET),           KC_C,  KC_V,       X(HEB_BET),       X(HEB_SHIN),      X(HEB_KAF),  X(HEB_MEM),       FT,       FT,       FT,      FT,      FT,       FT,                            FT,      FT,       FT,      FT,
         FT,         FT,         FT,         FT,             FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,      FT,      FT,                                      FT,      FT,       FT,      FT
     ),
+};    
 
 void matrix_init_keymap(void) {}
 
