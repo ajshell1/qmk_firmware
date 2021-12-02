@@ -481,7 +481,7 @@ const uint32_t PROGMEM unicode_map[] = {
     [CYR_UC_YO] = 0x0401,
     [CYR_LC_ZHE] = 0x0436,
     [CYR_UC_ZHE] = 0x0416,
-    [CYR_LC_ZE] = 0x0FTS,
+    [CYR_LC_ZE] = 0x0437,
     [CYR_UC_ZE] = 0x0417,
     [CYR_LC_I] = 0x0438,
     [CYR_UC_I] = 0x0418,
@@ -713,7 +713,7 @@ const uint32_t PROGMEM unicode_map[] = {
 //NEGATION
 [FTS_VULGAR_FRACTION_ONE_HALF] = 0x00BD,
 [FTS_VULGAR_FRACTION_ONE_QUARTER] = 0x00BC,
-[FTS_INVERTED_EXCLAMATION_MARK] = 0x,
+[FTS_INVERTED_EXCLAMATION_MARK] = 0x00A1,
 [FTS_LEFT_POINTING_DOUBLE_ANGLE_QUOTATION_MARK] = 0x00AB,
 [FTS_RIGHT_POINTING_DOUBLE_ANGLE_QUOTATION_MARK] = 0x,
 [FTS_LIGHT_SHADE] = 0x2591,
@@ -948,11 +948,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
 		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
 
-        FT,      FT,      FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,      FT,       FT,      FT,       FT,      FT,       FT,       FT,      FT,      FT,       FT,       FT,                  FT,      FT,       FT,      FT,
-        FT,      FT,      FT,       FT,       FT,       FT,       FT,  X(N_ARY_LOGICAL_AND), X(N_ARY_LOGICAL_OR), X(N_ARY_INTERSECT), X(N_ARY_UNION), X(SUBSET_OF),FT,X(SUPERSET_OF), X(FORALL),X(LEMNISCATE), X(THERE_EXISTS),FT,       FT,      FT,      FT,       FT,                            FT,      FT,       FT,      FT,
-        FT,      FT,      FT,       FT,       FT,       FT,       FT,  X(UP_TACK), X(DOWN_TACK), X(RIGHT_TACK), X(LEFT_TACK), X(UPWARDS_ARROW),FT,X(DOWNARDS_ARROW), X(LEFTWARDS_ARROW),X(RIGHTWARDS_ARROW), X(LEFTRIGHT_ARROW),X(PARTIAL_DIFFERENTIAL),       FT,      FT,      FT,                                      FT,      FT,       FT,      FT,
-        FT,      FT,      FT,       FT,       FT,       FT,       FT,       FT,  X(LEFT_FLOOR), X(LEFT_CEILING), X(NOT_EQUAL_TO), X(ASYMPTOTICALLY_EQUAL_TO),X(NOT_ASYMPTOTICALLY_EQUAL_TO),FT, X(LESS_THAN_OR_EQUAL),X(GREATER_THAN_OR_EQUAL),      FT,       FT,       FT,      FT,      FT,       FT,                            FT,      FT,       FT,      FT,
-        FT,      FT,      FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,      FT,       FT,      FT,       FT,      FT,       FT,       FT,      FT,      FT,                                      FT,      FT,       FT,      FT
+        FT,      FT,      FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,      FT,       FT,      FT,       FT,      FT,       FT,       FT,      FT,      FT,       FT,       FT,                                                                                FT,      FT,       FT,      FT,
+        FT,      FT,      FT,       FT,       FT,       FT,       FT,  X(N_ARY_LOGICAL_AND), X(N_ARY_LOGICAL_OR), X(N_ARY_INTERSECT), X(N_ARY_UNION), X(SUBSET_OF),FT,X(SUPERSET_OF), X(FORALL),X(LEMNISCATE), X(THERE_EXISTS),FT,       FT,      FT,      FT,       FT,                                        X(FTS_BOX_DRAWINGS_LIGHT_DOWN_AND_RIGHT),      X(FTS_BOX_DRAWINGS_LIGHT_DOWN_AND_HORIZONTAL),       X(FTS_BOX_DRAWINGS_LIGHT_DOWN_AND_LEFT),      FT,
+        FT,      FT,      FT,       FT,       FT,       FT,       FT,  X(UP_TACK), X(DOWN_TACK), X(RIGHT_TACK), X(LEFT_TACK), X(UPWARDS_ARROW),FT,X(DOWNARDS_ARROW), X(LEFTWARDS_ARROW),X(RIGHTWARDS_ARROW), X(LEFTRIGHT_ARROW),X(PARTIAL_DIFFERENTIAL),       FT,      FT,      FT,                            X(FTS_BOX_DRAWINGS_LIGHT_VERTICAL_AND_RIGHT),      X(FTS_BOX_DRAWINGS_LIGHT_VERTICAL_AND_HORIZONTAL),       X(FTS_BOX_DRAWINGS_LIGHT_VERTICAL_AND_LEFT),      FT,
+        FT,      FT,      FT,       FT,       FT,       FT,       FT,       FT,  X(LEFT_FLOOR), X(LEFT_CEILING), X(NOT_EQUAL_TO), X(ASYMPTOTICALLY_EQUAL_TO),X(NOT_ASYMPTOTICALLY_EQUAL_TO),FT, X(LESS_THAN_OR_EQUAL),X(GREATER_THAN_OR_EQUAL),      FT,       FT,       FT,      FT,      FT,       FT,        X(FTS_BOX_DRAWINGS_LIGHT_UP_AND_LEFT),      X(FTS_BOX_DRAWINGS_LIGHT_UP_AND_HORIZONTAL),       X(FTS_BOX_DRAWINGS_LIGHT_UP_AND_RIGHT),      FT,
+        FT,      FT,      FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,      FT,       FT,      FT,       FT,      FT,       FT,       FT,      FT,      FT,                                                                                                    X(FTS_BOX_DRAWINGS_LIGHT_VERTICAL),      FT,       X(FTS_BOX_DRAWINGS_LIGHT_HORIZONTAL),      FT
     ),
 
     /* _GREEK: lower/upper case greek (needs shift modifier application for upper case chars) from codepage U0370.pdf \
