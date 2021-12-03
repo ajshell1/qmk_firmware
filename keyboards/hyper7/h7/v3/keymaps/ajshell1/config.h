@@ -1,5 +1,5 @@
 #pragma once
 
-#define UNICODE_CYCLE_PERSIST false
+#define UNICODE_CYCLE_PERSIST true
 #define UNICODE_SELECTED_MODES UC_LNX, UC_WINC
 #define UNICODE_KEY_WINC KC_PAUSE
