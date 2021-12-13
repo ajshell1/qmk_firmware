@@ -870,7 +870,7 @@ enum custom_keycodes {
 	H_ML0R3C05,
 	H_ML0R3C21,
 	H_ML0R5C21,
-	H_ML0R5C23,
+	H_PAGE,
 	H_ML0R7C06,
 	H_ML0R7C14
 };
@@ -962,7 +962,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 		KC_F15,     KC_F16,     KC_F3,      KC_F4,          KC_PAUSE,         KC_SLCK,        KC_GRAVE,   KC_1,       KC_2,       KC_3,       KC_4,       KC_5,       KC_6,       KC_BSLS,    KC_7,       KC_8,       KC_9,       KC_0,       KC_MINUS,   KC_EQUAL,   KC_DEL,     KC_CAPS,      KC_PSCR,            KC_NLCK,    KC_PSLS,    KC_PAST,    KC_EQL,
         KC_F17,     KC_F18,     KC_F5,      KC_F6,          C(KC_INS),     S(KC_INS),         KC_TAB,           KC_Q,       KC_W,       KC_F,       KC_P,       KC_G,       KC_LBRC,    KC_J,       KC_L,       KC_U,       KC_Y,       KC_SCLN,    KC_QUOTE,   KC_BSPC,           MO(_HEB),          KC_HOME,        KC_P7,      KC_P8,     KC_P9,      KC_PMNS,
-	    KC_F19,     KC_F20,     KC_F7,      KC_F8,          MO(_FN),          MO(_APL),        LCTL_T(KC_ESC),    KC_A,       KC_R,       KC_S,       KC_T,       KC_D,       KC_RBRC,    KC_H,       KC_N,       KC_E,       KC_I,       KC_O,       KC_ENTER,          MO(_CYR),              H_ML0R5C23,         KC_P4,      KC_P5,      KC_P6,      KC_PPLS,
+	    KC_F19,     KC_F20,     KC_F7,      KC_F8,          MO(_FN),          MO(_APL),        LCTL_T(KC_ESC),    KC_A,       KC_R,       KC_S,       KC_T,       KC_D,       KC_RBRC,    KC_H,       KC_N,       KC_E,       KC_I,       KC_O,       KC_ENTER,          MO(_CYR),              H_PAGE,         KC_P4,      KC_P5,      KC_P6,      KC_PPLS,
         KC_F21,     KC_F22,     KC_F9,      KC_F10,         KC_HOME,    KC_END,     MO(_GREEK),       KC_LSFT,          KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,       KC_SLASH,   KC_K,       KC_M,       KC_COMMA,     KC_DOT,   KC_RSFT,          MO(_GREEK),           KC_UP,      KC_END,         KC_P1,      KC_P2,      KC_P3,      KC_ENTER,
         KC_F23,     KC_F23,     KC_F11,     KC_F12,         KC_VOLD,    KC_VOLU,    KC_MUTE,   KC_MEH,     KC_LGUI,    KC_LALT,          KC_LCTRL,          KC_SPC,           MO(_FN),         KC_DEL,           KC_RCTRL,         KC_RALT,    KC_RGUI,          KC_APP,     KC_LEFT,    KC_DOWN,    KC_RGHT,        KC_P0,      KC_DEL,     KC_PDOT,    KC_BSPC
 
@@ -1334,7 +1334,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
 	case H_ML0R5C21:
 		send_string("H_ML0R5C21");
 		return false;
-    case H_ML0R5C23:
+    case H_PAGE:
         if (get_mods() & MODS_SHIFT_MASK) {
           CLEAN_MODS(
             send_string(SS_TAP(X_PGUP));
