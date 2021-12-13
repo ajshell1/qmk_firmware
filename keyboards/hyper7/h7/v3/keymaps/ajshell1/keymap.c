@@ -809,11 +809,11 @@ enum custom_keycodes {
     H_MACRO,
     H_TERMINAL,
     H_QUOTE,
-    H_OVERSTRIKE,
+    H_OVER_STRIKE,
     H_CLEAR_INPUT,
     H_CLEAR_SCREEN,
     H_HOLD_OUTPUT,
-    H_STOP_OUTPUT,
+    H_STOP_INPUT,
     H_ABORT,
     H_BREAK,
     H_RESUME,
@@ -824,7 +824,7 @@ enum custom_keycodes {
     H_NETWORK,
     H_SYSTEM,
     H_REFRESH,
-    H_BUFFER,
+    H_BUFFERS
     H_SQUARE,
     H_CIRCLE,
     H_TRIANGLE,
@@ -911,16 +911,16 @@ enum custom_keycodes {
 */
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* _BASE: Base Layer(Default)
-*┌─────┬─────┬─────┬─────┐  ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐ ┌─────┬─────┬─────┬─────┐
-*│MAC1 │MAC2 │TU   │TD   │  │     │     │     │     │     │     │     │     │     │     │     │     │     │     │     │     │     │     │     │     │ │RMAC1│RMAC2│     │     │
-*├─────┼─────┼─────┼─────┤  ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤ ├─────┼─────┼─────┼─────┤
-*│     │     │HANDL│HANDR│  │     │     │     │     │     │     │     │     │     │     │     │     │     │     │     │     │     │     │     │     │ │     │     │     │     │
-*├─────┼─────┼─────┼─────┤  ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤ ├─────┼─────┼─────┼─────┤
-*│F13  │F14  │F1   │F2   │  │ESC  │SUPER│  ?  │  !  │  @  │  £  │  €  │  ¥  │  ‘  │  “  │  ”  │  ’  │  _  │  <  │  >  │  |  │  {  │  }  │MSTOP│INS  │ │  ^  │  %  │  #  │  $  │
-*└─────┴─────┴─────┴─────┘  └─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘ └─────┴─────┴─────┴─────┘
+*┌───────────┬───────────┐  ┌───────────┬───────────┬───────────┬───────────┬───────────┬───────────┬───────────┬───────────┬───────────┬───────────┐ ┌───────────┬───────────┐
+*│HELP       │DM_PLY1    │  │TERMINAL   │QUOTE      │INS        │CLEAR INPUT│CLEARSCREEN│HOLD OUTPUT│DM_RSTP    │ABORT      │BREAK      │RESUME     │ │DM_REC1    │RESET      │
+*├───────────┼───────────┤  ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┤
+*│LOCAL      │DM_PLY2    │  │SYSTEM     │REFRESH    │BUFFERS    │SQUARE     │CIRCLE     │TRIANGLE   │DIAMOND    │REPEAT     │TRASMIT    │STATUS     │ │DM_REC2    │CAPS LOCK  │
+*├─────┬─────┼─────┬─────┤  ├───────────┼─────┬─────┼─────┬─────┼─────┬─────┼─────┬─────┼─────┬─────┼─────┬─────┼─────┬─────┼─────┬─────┼───────────┤ ├─────┬─────┼─────┬─────┤
+*│F13  │F14  │F1   │F2   │  │ESC        │  ?  │  !  │  @  │  £  │  €  │  ¥  │  ‘  │  “  │  ”  │  ’  │  _  │  <  │  >  │  |  │  {  │  }  │MSTOP│INS  │ │  ^  │  %  │  #  │  $  │
+*└─────┴─────┴─────┴─────┘  └───────────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴───────────┘ └─────┴─────┴─────┴─────┘
 *
 *┌─────┬─────┬─────┬─────┐  ┌────────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬────────┐ ┌─────┬─────┬─────┬─────┐
-*│F15  │F16  │F3   │F4   │  │COMPOSE │SLCK │ `/~ │  1  │  2  │  3  │  4  │  5  │  6  │  \  │  7  │  8  │  9  │  0  │  -  │  =  │DELET│CAPLK│UNDO    │ │  ~  │  /  │  *  │  =  │
+*│F15  │F16  │F3   │F4   │  │COMPOSE │SLCK │ `/~ │  1  │  2  │  3  │  4  │  5  │  6  │  \  │  7  │  8  │  9  │  0  │  -  │  =  │DELET│CAPLK│PSCR    │ │  ~  │  /  │  *  │  =  │
 *├─────┼─────┼─────┼─────┤  ├─────┬──┴─────┼─────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴─────┼─────┴──┬─────┤ ├─────┼─────┼─────┼─────┤
 *│F17  │F18  │F5   │F6   │  │COPY │PASTE   │TAB     │  Q  │  W  │  F  │  P  │  G  │  [  │  J  │  L  │  U  │  Y  │  ;  │  '  │RUB OUT │_HEB    │BEGIN│ │  7  │  8  │  9  │  -  │
 *├─────┼─────┼─────┼─────┤  ├─────┴──┬─────┴──┬─────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴─────┬──┴─────┬──┴─────┤ ├─────┼─────┼─────┼─────┤
@@ -931,19 +931,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 *│F23  │F24  │F11  │F12  │  │VOLD │VOLU │MUTE │MEH  │LGUI    │LALT │LCTRL   │SPACE   │_FN  │SPACE   │CONTROL │SUPER│HYPER   │APP  │LEFT │DOWN │RIGHT│ │  0  │ DEL │  .  │FUN  │
 *└─────┴─────┴─────┴─────┘  └─────┴─────┴─────┴─────┴────────┴─────┴────────┴────────┴─────┴────────┴────────┴─────┴────────┴─────┴─────┴─────┴─────┘ └─────┴─────┴─────┴─────┘
      *  Incomplete mappings
-     *  r1: H_MACRO, H_TERMINAL, H_OVERSTRIKE, H_HOLD_OUTPUT, H_STOP_OUTPUT, H_CALL
-     *  r2: H_LOCAL, H_NETWORK, H_SYSTEM, H_REFRESH, H_BUFFER, H_SQUARE, H_CIRCLE, H_TRIANGLE, H_DIAMOND, H_REPEAT, H_TRANSMIT, H_STATUS
+     *  r1: H_TERMINAL, H_OVER_STRIKE, H_HOLD_OUTPUT, H_STOP_INPUT, H_CALL
+     *  r2: H_LOCAL, H_SYSTEM, H_REFRESH, H_BUFFERS H_SQUARE, H_CIRCLE, H_TRIANGLE, H_DIAMOND, H_REPEAT, H_TRANSMIT, H_STATUS
      *  r3: H_COMPLETE
      *
-     *  r1: H_FIND, H_WRITE
-     *  r2: H_MARK
-     *  r3: H_SELECT, H_DEBUG, H_LINE
-     *  r4: H_TTY
-     *  r2: H_7BIT, H_CIRCLE_SM
+
      */
     [_BASE] = LAYOUT_h7v3_183(
-        H_HELP,                 DM_PLY2,                    H_TERMINAL,                H_QUOTE,                H_OVERSTRIKE,           H_CLEAR_INPUT,          H_CLEAR_SCREEN,         H_HOLD_OUTPUT,          H_STOP_OUTPUT,          H_ABORT,                H_BREAK,                H_RESUME,                   H_CALL,                 KC_NLCK,           //14
-        H_LOCAL,                H_NETWORK,                  H_SYSTEM,                  H_REFRESH,              H_BUFFER,               H_SQUARE,               H_CIRCLE,               H_TRIANGLE,             H_DIAMOND,              H_REPEAT,               H_TRANSMIT,             H_STATUS,                   H_SUSPEND,              KC_CLCK,           //14
+        H_HELP,                 DM_PLY1,                    H_TERMINAL,                H_QUOTE,                KC_INS,                 H_CLEAR_INPUT,          H_CLEAR_SCREEN,         H_HOLD_OUTPUT,          DM_RSTP,                H_ABORT,                H_BREAK,                H_RESUME,                   DM_REC1,                KC_SLCK,           //14
+        H_LOCAL,                DM_PLY2,                    H_SYSTEM,                  H_REFRESH,              H_BUFFERS               H_SQUARE,               H_CIRCLE,               H_TRIANGLE,             H_DIAMOND,              H_REPEAT,               H_TRANSMIT,             H_STATUS,                   DM_REC2,                KC_CLCK,           //14
         KC_F13,     KC_F14,     KC_F1,      KC_F2,          KC_ESC,                    KC_QUES,    KC_EXLM,    KC_AT,      X(GBP),     X(EURO),    X(JPY),     X(SQT_OPEN),X(DQT_OPEN),X(DQT_CLSE),X(SQT_CLSE),KC_UNDS,    KC_LABK,    KC_RABK,    KC_PIPE,    KC_LCBR,    KC_RCBR,    H_COMPLETE,                 KC_CIRC,    KC_PERC,    KC_HASH,    KC_DLR,
 
 		KC_F15,     KC_F16,     KC_F3,      KC_F4,          KC_PAUSE,         KC_SLCK,        KC_GRAVE,   KC_1,       KC_2,       KC_3,       KC_4,       KC_5,       KC_6,       KC_BSLS,    KC_7,       KC_8,       KC_9,       KC_0,       KC_MINUS,   KC_EQUAL,   KC_DEL,     KC_CAPS,      KC_PSCR,            KC_NLCK,    KC_PSLS,    KC_PAST,    KC_EQL,
@@ -1118,7 +1114,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
         // wraps selected (editable) text in quotation marks
         send_string(SS_LCTL(SS_TAP(X_X))SS_TAP(X_QUOTE)SS_LCTL(SS_TAP(X_V))SS_TAP(X_QUOTE));
         return false;
-      case H_OVERSTRIKE:
+      case H_OVER_STRIKE:
         // toggles insert/overstrike
         send_string(SS_TAP(X_INSERT));
         return false;
@@ -1134,8 +1130,8 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
       case H_HOLD_OUTPUT:
         send_string("[HOLD OUTPUT] key");
         return false;
-      case H_STOP_OUTPUT:
-        send_string("[STOP OUTPUT] key");
+      case H_STOP_INPUT:
+        send_string("[STOP INPUT] key");
         return false;
       case H_ABORT:
         send_string(SS_LCTL(SS_TAP(X_C)));
@@ -1163,8 +1159,8 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
       case H_REFRESH:
         send_string(SS_LCTL(SS_TAP(X_R)));
         return false;
-      case H_BUFFER:
-        send_string("[BUFFER] key");
+      case H_BUFFERS
+        send_string("[BUFFERS key");
         return false;
       case H_SQUARE:
         send_string("[SQUARE] key");
