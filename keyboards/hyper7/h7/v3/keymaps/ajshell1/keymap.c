@@ -912,9 +912,9 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* _BASE: Base Layer(Default)
 *┌───────────┬───────────┐  ┌───────────┬───────────┬───────────┬───────────┬───────────┬───────────┬───────────┬───────────┬───────────┬───────────┐ ┌───────────┬───────────┐
-*│HELP       │DM_PLY1    │  │TERMINAL   │QUOTE      │INS        │CLEAR INPUT│CLEARSCREEN│HOLD OUTPUT│DM_RSTP    │ABORT      │BREAK      │RESUME     │ │DM_REC1    │RESET      │
+*│HELP       │DM_PLY1    │  │TERMINAL   │QUOTE      │INS        │CLEAR INPUT│CLEARSCREEN│HOLD OUTPUT│DM_RSTP    │ABORT      │BREAK      │STEAM      │ │DM_REC1    │RESET      │
 *├───────────┼───────────┤  ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┤
-*│LOCAL      │DM_PLY2    │  │SYSTEM     │REFRESH    │BUFFERS    │SQUARE     │CIRCLE     │TRIANGLE   │DIAMOND    │REPEAT     │TRASMIT    │STATUS     │ │DM_REC2    │CAPS LOCK  │
+*│LOCAL      │DM_PLY2    │  │SYSTEM     │REFRESH    │SAVE ACTIVE│SAVE AREA  │SAVE WINDOW│SAVE OUTPUT│SAVE SCREEN│REPEAT     │TRASMIT    │STATUS     │ │DM_REC2    │CAPS LOCK  │
 *├─────┬─────┼─────┬─────┤  ├───────────┼─────┬─────┼─────┬─────┼─────┬─────┼─────┬─────┼─────┬─────┼─────┬─────┼─────┬─────┼─────┬─────┼───────────┤ ├─────┬─────┼─────┬─────┤
 *│F13  │F14  │F1   │F2   │  │ESC        │  ?  │  !  │  @  │  £  │  €  │  ¥  │  ‘  │  “  │  ”  │  ’  │  _  │  <  │  >  │  |  │  {  │  }  │MSTOP│INS  │ │  ^  │  %  │  #  │  $  │
 *└─────┴─────┴─────┴─────┘  └───────────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴───────────┘ └─────┴─────┴─────┴─────┘
@@ -932,13 +932,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 *└─────┴─────┴─────┴─────┘  └─────┴─────┴─────┴─────┴────────┴─────┴────────┴────────┴─────┴────────┴────────┴─────┴────────┴─────┴─────┴─────┴─────┘ └─────┴─────┴─────┴─────┘
      *  Incomplete mappings
      *  r1: H_TERMINAL, H_OVER_STRIKE, H_HOLD_OUTPUT, H_STOP_INPUT, H_CALL
-     *  r2: H_LOCAL, H_SYSTEM, H_REFRESH, H_BUFFERS H_SQUARE, H_CIRCLE, H_TRIANGLE, H_DIAMOND, H_REPEAT, H_TRANSMIT, H_STATUS
+     *  r2: H_LOCAL, H_SYSTEM, H_REFRESH, H_REPEAT, H_TRANSMIT, H_STATUS
      *  r3: H_COMPLETE
      *
 
      */
     [_BASE] = LAYOUT_h7v3_183(
-        H_HELP,                 DM_PLY1,                    H_TERMINAL,                H_QUOTE,                KC_INS,                 H_CLEAR_INPUT,          H_CLEAR_SCREEN,         H_HOLD_OUTPUT,          DM_RSTP,                H_ABORT,                H_BREAK,                H_RESUME,                   DM_REC1,                KC_SLCK,           //14
+        H_HELP,                 DM_PLY1,                    H_TERMINAL,                H_QUOTE,                H_OVER_STRIKE,          H_CLEAR_INPUT,          H_CLEAR_SCREEN,         H_HOLD_OUTPUT,          DM_RSTP,                H_ABORT,                H_BREAK,                H_RESUME,                   DM_REC1,                KC_SLCK,           //14
         H_LOCAL,                DM_PLY2,                    H_SYSTEM,                  H_REFRESH,              H_BUFFERS,              H_SQUARE,               H_CIRCLE,               H_TRIANGLE,             H_DIAMOND,              H_REPEAT,               H_TRANSMIT,             H_STATUS,                   DM_REC2,                KC_CLCK,           //14
         KC_F13,     KC_F14,     KC_F1,      KC_F2,          KC_ESC,                    KC_QUES,    KC_EXLM,    KC_AT,      X(GBP),     X(EURO),    X(JPY),     X(SQT_OPEN),X(DQT_OPEN),X(DQT_CLSE),X(SQT_CLSE),KC_UNDS,    KC_LABK,    KC_RABK,    KC_PIPE,    KC_LCBR,    KC_RCBR,    H_COMPLETE,                 KC_CIRC,    KC_PERC,    KC_HASH,    KC_DLR,
 
@@ -1105,6 +1105,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
         send_string("[HELP] key");
         return false;
       case H_MACRO:
+        //Unused currently. DM_PLAY1
         send_string("[MACRO] key");
         return false;
       case H_TERMINAL:
@@ -1140,7 +1141,9 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
         send_string(SS_TAP(X_PAUSE));
         return false;
       case H_RESUME:
-        send_string(SS_TAP(X_F)SS_TAP(X_G)SS_TAP(X_ENTER));
+        //Launch Steam
+        send_string(SS_LGUI(SS_LSFT(SS_LALT(SS_LCTL("s")))));    
+        //send_string(SS_TAP(X_F)SS_TAP(X_G)SS_TAP(X_ENTER));
         return false;
       case H_CALL:
         send_string("[CALL] key");
