@@ -1164,7 +1164,8 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
         send_string(SS_LGUI("p"));
         return false;
       case H_SQUARE:
-        send_string("[SQUARE] key");
+        //Save Area    
+        send_string(SS_LGUI(SS_LSFT("p")));
         return false;
       case H_CIRCLE:
         send_string("[CIRCLE] key");
