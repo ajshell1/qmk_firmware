@@ -824,7 +824,7 @@ enum custom_keycodes {
     H_NETWORK,
     H_SYSTEM,
     H_REFRESH,
-    H_BUFFERS
+    H_BUFFERS,
     H_SQUARE,
     H_CIRCLE,
     H_TRIANGLE,
