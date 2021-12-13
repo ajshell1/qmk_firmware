@@ -1160,7 +1160,8 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
         send_string(SS_LCTL(SS_TAP(X_R)));
         return false;
       case H_BUFFERS:
-        send_string("[BUFFERS] key");
+         //Save Active   
+        send_string(SS_LGUI("p"));
         return false;
       case H_SQUARE:
         send_string("[SQUARE] key");
