@@ -1168,13 +1168,16 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
         send_string(SS_LGUI(SS_LSFT("p")));
         return false;
       case H_CIRCLE:
-        send_string("[CIRCLE] key");
+         //Save Window
+        send_string(SS_LGUI(SS_LCTL("p")));
         return false;
       case H_TRIANGLE:
-        send_string("[TRIANGLE] key");
+        //Save Output
+        send_string(SS_LGUI(SS_LALT("p")));
         return false;
       case H_DIAMOND:
-        send_string("[DIAMOND] key");
+        //Save Screen    
+        send_string(SS_LGUI(SS_LALT(SS_LCTL("p"))));
         return false;
       case H_REPEAT:
         send_string("[REPEAT] key");
