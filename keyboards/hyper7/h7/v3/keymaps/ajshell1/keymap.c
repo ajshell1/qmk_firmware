@@ -9,15 +9,19 @@
 //order doesn't matter here
 enum unicode_names {
     //AT_SYMBOL,
-    //GBP,
-    //JPY,
-    //EURO,
+    GBP,
+    JPY,
+    EURO,
     //PLUS_MINUS,
     //QUOTATION_MARK,
     //TILDE_OPERATOR,
     //SINGLE_RIGHT_POINTING_ANGLE_QUOTATION_MARK,
     //SINGLE_LEFT_POINTING_ANGLE_QUOTATION_MARK,
     //BACKTICK,
+    SQT_OPEN,
+    DQT_OPEN,
+    DQT_CLSE,
+    SQT_CLSE,
     //DQUOTE_OPEN,
     //DQUOTE_CLOSE,
     //PRIME,
@@ -390,9 +394,6 @@ const uint32_t PROGMEM unicode_map[] = {
 //Only the first 128 will work with XP(i, j)
 // Unicode char definitions
     //[AT_SYMBOL] = 0x0040,
-    //[GBP] = 0x00A3,
-    //[JPY] = 0x00A5,
-    //[EURO] = 0x20AC,
     //[PLUS_MINUS] = 0x00B1,
     //[QUOTATION_MARK] = 0x0022,
     //[TILDE_OPERATOR] = 0x223C,
@@ -560,7 +561,15 @@ const uint32_t PROGMEM unicode_map[] = {
     [CYR_UC_SHORTU] = 0x040E,
     [CYR_LC_DZHE] = 0x045F,
     [CYR_UC_DZHE] = 0x040F,
-    // APL
+    //Unshifted base
+    [GBP] = 0x00A3,
+    [JPY] = 0x00A5,
+    [EURO] = 0x20AC,
+    [SQT_OPEN] = 0x2018,
+    [DQT_OPEN] = 0x201C,
+    [DQT_CLSE] = 0x201D,
+    [SQT_CLSE] = 0x2019,
+    //APL
     [N_ARY_LOGICAL_AND] = 0x22C0,
     [N_ARY_LOGICAL_OR] = 0x22C1,
     [N_ARY_INTERSECT] = 0x22C2,
@@ -955,10 +964,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *  r4: H_TTY
      *  r2: H_7BIT, H_CIRCLE_SM
      */
-    [_BASE] = LAYOUT_h7v3_213(
-        DM_PLY1,    DM_PLY2,    H_DL0R0C02, H_DL0R0C03,     H_DL0R0C04,    HYPR(KC_T), H_DL0R0C06, H_DL0R0C07, H_DL0R0C08, H_DL0R0C09, H_DL0R0C10, H_DL0R0C11, H_DL0R0C12, H_DL0R0C13, H_DL0R0C14, H_DL0R0C15, H_DL0R0C16, H_DL0R0C17, H_DL0R0C18, H_DL0R0C19, H_DL0R0C20, H_DL0R0C21, H_DL0R0C22, H_DL0R0C23,     DM_REC1,    DM_REC2,    H_DL0R0C26, H_DL0R0C27,
-        H_DL0R1C00, H_DL0R1C01, H_DL0R1C02, H_DL0R1C03,     G(KC_P),       G(S(KC_P)), G(A(KC_P)), G(C(KC_P)), LCAG(KC_P), H_DL0R1C09, H_DL0R0C10, HYPR(KC_S), H_DL0R1C12, H_DL0R1C13, H_DL0R1C14, H_DL0R1C15, H_DL0R1C16, H_DL0R1C17, H_DL0R1C18, H_DL0R1C19, H_DL0R1C20, H_DL0R1C21, H_DL0R1C22, H_DL0R1C23,     KC_CAPS,    KC_PSCR,    KC_SLCK,    KC_PAUSE,
-        KC_F13,     KC_F14,     KC_F1,      KC_F2,          KC_ESC,         KC_PSCR,   H_DL0R2C06, KC_F1,      KC_F2,      KC_F3,      KC_F4,      H_DL0R2C11, KC_F5,      KC_F6,      KC_F7,      KC_F8,      H_DL0R2C16, KC_F9,      KC_F10,     KC_F11,     KC_F12,     H_DL0R2C21, KC_INS,     DM_RSTP,        KC_CIRC,    KC_PERC,    KC_HASH,    KC_DLR,
+    [_BASE] = LAYOUT_h7v3_183(
+        H_HELP,                 DM_PLY2,                    H_TERMINAL,                H_QUOTE,                H_OVERSTIKE,            H_CLEAR_INPUT,          H_CLEAR_SCREEN,         H_HOLD_OUTPUT,          H_STOP_OUTPUT,          H_ABORT,                H_BREAK,                H_RESUME,                   H_CALL,                 KC_NLCK,           //14
+        H_LOCAL,                H_NETWORK,                  H_SYSTEM,                  H_REFRESH,              H_BUFFER,               H_SQUARE,               H_CIRCLE,               H_TRIANGLE,             H_DIAMOND,              H_REPEAT,               H_TRANSMIT,             H_STATUS,                   H_SUSPEND,              KC_CLCK,           //14
+        KC_F13,     KC_F14,     KC_F1,      KC_F2,          KC_ESC,                    KC_QUES,    KC_EXLM,    KC_AT,      X(GBP),     X(EURO),    X(JPY),     X(SQT_OPEN),X(DQT_OPEN),X(DQT_CLSE),X(SQT_CLSE),KC_UNDS,    KC_LABK,    KC_RABK,    KC_PIPE,    KC_LCBR,    KC_RCBR,    H_COMPLETE,                 KC_CIRC,    KC_PERC,    KC_HASH,    KC_DLR,
 
 		KC_F15,     KC_F16,     KC_F3,      KC_F4,          KC_PAUSE,         KC_SLCK,        KC_GRAVE,   KC_1,       KC_2,       KC_3,       KC_4,       KC_5,       KC_6,       KC_BSLS,    KC_7,       KC_8,       KC_9,       KC_0,       KC_MINUS,   KC_EQUAL,   KC_DEL,     KC_CAPS,      KC_PSCR,            KC_NLCK,    KC_PSLS,    KC_PAST,    KC_EQL,
         KC_F17,     KC_F18,     KC_F5,      KC_F6,          C(KC_INS),     S(KC_INS),         KC_TAB,           KC_Q,       KC_W,       KC_F,       KC_P,       KC_G,       KC_LBRC,    KC_J,       KC_L,       KC_U,       KC_Y,       KC_SCLN,    KC_QUOTE,   KC_BSPC,           MO(_HEB),          KC_HOME,        KC_P7,      KC_P8,     KC_P9,      KC_PMNS,
@@ -990,10 +999,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |     |     |     |     |#|     |     |     |     |        |     |        |        |     |        |        |     |        |     |     |     |     |#|     |     |     |     |
      * `-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
      */
-    [_APL] = LAYOUT_h7v3_213(
-		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
-		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
-		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
+    [_APL] = LAYOUT_h7v3_183(
+        FT,               FT,                 FT,                 FT,                 FT,                 FT,                FT,                FT,                 FT,                FT,               FT,                 FT,                  FT,                FT,
+        FT,               FT,                 FT,                 FT,                 FT,                 FT,                FT,                FT,                 FT,                FT,               FT,                 FT,                  FT,                FT,
+        FT,      FT,      FT,       FT,       FT,                 FT,       FT,       FT,       FT,       FT,       FT,      FT,       FT,      FT,       FT,       FT,      FT,       FT,      FT,      FT,       FT,       FT,                  FT,      FT,       FT,      FT,
 
         FT,      FT,      FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,      FT,       FT,      FT,       FT,      FT,       FT,       FT,      FT,      FT,       FT,       FT,                                                                                FT,      FT,       FT,      FT,
         X(FTS_BOX_DRAWINGS_DOUBLE_DOWN_AND_RIGHT),X(FTS_BOX_DRAWINGS_DOUBLE_DOWN_AND_HORIZONTAL),X(FTS_BOX_DRAWINGS_DOUBLE_DOWN_AND_LEFT),FT,       FT,       FT,       FT,  X(N_ARY_LOGICAL_AND), X(N_ARY_LOGICAL_OR), X(N_ARY_INTERSECT), X(N_ARY_UNION), X(SUBSET_OF),FT,X(SUPERSET_OF), X(FORALL),X(LEMNISCATE), X(THERE_EXISTS),FT,       FT,      FT,      FT,       FT,                                        X(FTS_BOX_DRAWINGS_LIGHT_DOWN_AND_RIGHT),X(FTS_BOX_DRAWINGS_LIGHT_DOWN_AND_HORIZONTAL),X(FTS_BOX_DRAWINGS_LIGHT_DOWN_AND_LEFT),FT,
@@ -1023,10 +1032,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |     |     |     |     |#|     |     |     |     |        |     |        |        |     |        |        |     |        |     |     |     |     |#|     |     |     |     |
      * `-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
      */
-    [_GREEK] = LAYOUT_h7v3_213(
-        FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
-		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
-		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
+    [_GREEK] = LAYOUT_h7v3_183(
+        FT,               FT,                 FT,                 FT,                 FT,                 FT,                FT,                FT,                 FT,                FT,               FT,                 FT,                  FT,                FT,
+        FT,               FT,                 FT,                 FT,                 FT,                 FT,                FT,                FT,                 FT,                FT,               FT,                 FT,                  FT,                FT,
+        FT,      FT,      FT,       FT,       FT,                 FT,       FT,       FT,       FT,       FT,       FT,      FT,       FT,      FT,       FT,       FT,      FT,       FT,      FT,      FT,       FT,       FT,                  FT,      FT,       FT,      FT,
         FT,      FT,      FT,       FT,       FT, X(CONTOUR_INTEGRAL),  X(NEGATION),  X(COPTIC_LC_DEI), X(DOUBLE_DAGGER), X(NABLA), X(CENT), X(DEGREE), X(APL_QUAD), X(DOUBLE_VERTICAL_LINE), X(DIVISION), X(MULTIPLICATION), X(PILCROW), X(LARGE_CIRCLE), X(HORIZONTAL_BAR), X(APPROXIMATELY_EQUAL_TO), X(SQUARE_IMAGE_OF), X(SQUARE_ORIGINAL_OF),       FT,                    FT,     FT,       FT,      FT,
         FT,      FT,      FT,       FT,       FT,       FT,       FT,  XP(GREEK_LC_XI, GREEK_UC_XI), X(GREEK_LC_FINAL_SIGMA), XP(GREEK_LC_PHI, GREEK_UC_PHI), XP(GREEK_LC_PI, GREEK_UC_PI), XP(GREEK_LC_GAMMA, GREEK_UC_GAMMA), X(MATHEMATICAL_LEFT_WHITE_SQUARE_BRACKET), XP(GREEK_LC_YOT, GREEK_UC_YOT),XP(GREEK_LC_LAMDA, GREEK_UC_LAMDA),XP(GREEK_LC_THETA, GREEK_UC_THETA),XP(GREEK_LC_UPSILON, GREEK_UC_UPSILON),X(TWO_DOT_LEADER),X(BULLET),     FT,      FT,      FT,                            FT,      FT,       FT,      FT,
         FT,      FT,      FT,       FT,       FT,       FT,       FT,  XP(GREEK_LC_ALPHA, GREEK_UC_ALPHA), XP(GREEK_LC_RHO, GREEK_UC_RHO), XP(GREEK_LC_SIGMA, GREEK_UC_SIGMA), XP(GREEK_LC_TAU, GREEK_UC_TAU),XP(GREEK_LC_DELTA, GREEK_UC_DELTA), X(MATHEMATICAL_RIGHT_WHITE_SQUARE_BRACKET), XP(GREEK_LC_ETA, GREEK_UC_ETA), XP(GREEK_LC_NU, GREEK_UC_NU), XP(GREEK_LC_EPSILON, GREEK_UC_EPSILON), XP(GREEK_LC_IOTA, GREEK_UC_IOTA), XP(GREEK_LC_OMICRON, GREEK_UC_OMICRON),      FT,      FT,      FT,                                     FT,      FT,       FT,      FT,
@@ -1055,11 +1064,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |     |     |     |     |#|     |     |     |     |        |     |        |        |     |        |        |     |        |     |     |     |     |#|     |     |     |     |
      * `-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
      */
-    [_FN] = LAYOUT_h7v3_213(
-		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         RESET,
-		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
-		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
-
+    [_FN] = LAYOUT_h7v3_183(
+        FT,               FT,                 FT,                 FT,                 FT,                 FT,                FT,                FT,                 FT,                FT,               FT,                 FT,                  FT,                RESET,
+        FT,               FT,                 FT,                 FT,                 FT,                 FT,                FT,                FT,                 FT,                FT,               FT,                 FT,                  FT,                FT,
+        FT,      FT,      FT,       FT,       FT,                 FT,       FT,       FT,       FT,       FT,       FT,      FT,       FT,      FT,       FT,       FT,      FT,       FT,      FT,      FT,       FT,       FT,                  FT,      FT,       FT,      FT,
         FT,         FT,         FT,         FT,             FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,      FT,      FT,       FT,       FT,                  FT,      FT,       FT,      FT,
         FT,         FT,         FT,         FT,             FT,       FT,       FT,       FT,       FT,  FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,       FT,      FT,      FT,       FT,                            FT,      FT,       FT,      FT,
         FT,         FT,         FT,         FT,             FT,       UC_MOD,   FT,       KC_HOME,       KC_PGDN,       KC_PGUP,       KC_END,       FT,       FT,       FT,       KC_LEFT,       KC_DOWN,  KC_UP,       KC_RGHT,       FT,      FT,      FT,                                      FT,      FT,       FT,      FT,
@@ -1087,10 +1095,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |     |     |     |     |#|     |     |     |     |        |     |        |        |     |        |        |     |        |     |     |     |     |#|     |     |     |     |
      * `-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
      */
-    [_CYR] = LAYOUT_h7v3_213(
-        FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
-		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
-		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
+    [_CYR] = LAYOUT_h7v3_183(
+        FT,               FT,                 FT,                 FT,                 FT,                 FT,                FT,                FT,                 FT,                FT,               FT,                 FT,                  FT,                FT,
+        FT,               FT,                 FT,                 FT,                 FT,                 FT,                FT,                FT,                 FT,                FT,               FT,                 FT,                  FT,                FT,
+        FT,      FT,      FT,       FT,       FT,                 FT,       FT,       FT,       FT,       FT,       FT,      FT,       FT,      FT,       FT,       FT,      FT,       FT,      FT,      FT,       FT,       FT,                  FT,      FT,       FT,      FT,
         FT,      FT,      FT,       FT,       FT, FT,  XP(CYR_LC_UAGE, CYR_UC_UAGE),  XP(CYR_LC_DJE, CYR_UC_DJE),XP(CYR_LC_GJE, CYR_UC_GJE),XP(CYR_LC_UAYE, CYR_UC_UAYE),XP(CYR_LC_DZE, CYR_UC_DZE),XP(CYR_LC_IDOT, CYR_UC_IDOT),XP(CYR_LC_JE, CYR_UC_JE),XP(CYR_LC_YI, CYR_UC_YI),XP(CYR_LC_LJE, CYR_UC_LJE),XP(CYR_LC_NJE, CYR_UC_NJE),XP(CYR_LC_TJE, CYR_UC_TJE),XP(CYR_LC_KJE, CYR_UC_KJE),XP(CYR_LC_SHORTU, CYR_UC_SHORTU),XP(CYR_LC_DZHE, CYR_UC_DZHE),       FT,FT,FT,                    FT,     FT,       FT,      FT,
         FT,      FT,      FT,       FT,       FT,       FT,       FT,  XP(CYR_LC_YA, CYR_UC_YA),XP(CYR_LC_YU, CYR_UC_YU),XP(CYR_LC_EF, CYR_UC_EF),XP(CYR_LC_PE, CYR_UC_PE),XP(CYR_LC_GE, CYR_UC_GE),XP(CYR_LC_TSE, CYR_UC_TSE),XP(CYR_LC_SHORTI, CYR_UC_SHORTI),XP(CYR_LC_EL, CYR_UC_EL),XP(CYR_LC_U, CYR_UC_U),XP(CYR_LC_YERY, CYR_UC_YERY),XP(CYR_LC_E, CYR_UC_E),XP(CYR_LC_YO, CYR_UC_YO),     FT,      FT,      FT,                            FT,      FT,       FT,      FT,
         FT,      FT,      FT,       FT,       FT,       FT,       FT,  XP(CYR_LC_A, CYR_UC_A),XP(CYR_LC_ER, CYR_UC_ER),XP(CYR_LC_ES, CYR_UC_ES),XP(CYR_LC_TE, CYR_UC_TE),XP(CYR_LC_DE, CYR_UC_DE),XP(CYR_LC_SHCHA, CYR_UC_SHCHA),XP(CYR_LC_ZHE, CYR_UC_ZHE),XP(CYR_LC_EN, CYR_UC_EN),XP(CYR_LC_YE, CYR_UC_YE),XP(CYR_LC_I, CYR_UC_I),XP(CYR_LC_O, CYR_UC_O),      FT,      FT,      FT,                                     FT,      FT,       FT,      FT,
@@ -1099,10 +1107,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         ),
 
 
-  [_HEB] = LAYOUT_h7v3_213(
-		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         RESET,
-		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
-		FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,         FT,             FT,         FT,         FT,         FT,
+  [_HEB] = LAYOUT_h7v3_183(
+        FT,               FT,                 FT,                 FT,                 FT,                 FT,                FT,                FT,                 FT,                FT,               FT,                 FT,                  FT,                FT,
+        FT,               FT,                 FT,                 FT,                 FT,                 FT,                FT,                FT,                 FT,                FT,               FT,                 FT,                  FT,                FT,
+        FT,      FT,      FT,       FT,       FT,                 FT,       FT,       FT,       FT,       FT,       FT,      FT,       FT,      FT,       FT,       FT,      FT,       FT,      FT,      FT,       FT,       FT,                  FT,      FT,       FT,      FT,
 
         FT,         FT,         FT,         FT,             FT,       FT,       X(HEB_P_SHEVA),X(HEB_P_HATAF_SEGOL),X(HEB_P_HATAF_PATAH),X(HEB_P_HATAF_QAMATS),X(HEB_P_HIRIQ),X(HEB_P_TSERE),X(HEB_P_SEGOL),X(HEB_P_PATAH),X(HEB_P_QAMATS),X(HEB_P_HOLAM),X(HEB_P_HOLAM_HASER_VAV),X(HEB_P_QUBUTS),X(HEB_P_METEG),X(HEB_P_RAFE),      FT,       FT,       FT,                  FT,      FT,       FT,      FT,
         FT,         FT,         FT,         FT,             FT,       FT,       FT,       X(HEB_QOF),X(HEB_VAV),X(HEB_FINAL_PE),X(HEB_PE),X(HEB_GIMEL),X(HEB_P_SIN_DOT),X(HEB_FINAL_TSADI),X(HEB_LAMED),X(HEB_TSADI),FT,       FT,       FT,      FT,      FT,       FT,                            FT,      FT,       FT,      FT,
@@ -1120,220 +1128,105 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
   if (record->event.pressed) {
     switch(keycode) {
       // [daughter board] row 1 POS key macros
-	case H_DL0R0C00:
-		send_string("hypercomp");
-		return false;
-	case H_DL0R0C01:
-		send_string("hyperflash");
-		return false;
-	case H_DL0R0C02:
-		send_string("hyperedit");
-		return false;
-	case H_DL0R0C03:
-		send_string("cd /home/aj/git/qmk_firmware/keyboards/hyper7/h7/v3");
-		return false;
-	case H_DL0R0C04:
-		send_string("doas mount -a");
-		return false;
-	case H_DL0R0C05:
-		send_string("tappyttf");
-		return false;
-	case H_DL0R0C06:
-		send_string("nmeat");
-		return false;
-	case H_DL0R0C07:
-		send_string("H_DL0R0C07");
-		return false;
-	case H_DL0R0C08:
-		send_string("H_DL0R0C08");
-		return false;
-	case H_DL0R0C09:
-		send_string("H_DL0R0C09");
-		return false;
-	case H_DL0R0C10:
-		send_string("H_DL0R0C10");
-		return false;
-	case H_DL0R0C11:
-		send_string("H_DL0R0C11");
-		return false;
-	case H_DL0R0C12:
-		send_string("H_DL0R0C12");
-		return false;
-	case H_DL0R0C13:
-		send_string("H_DL0R0C13");
-		return false;
-	case H_DL0R0C14:
-		send_string("H_DL0R0C14");
-		return false;
-	case H_DL0R0C15:
-		send_string("H_DL0R0C15");
-		return false;
-	case H_DL0R0C16:
-		send_string("H_DL0R0C16");
-		return false;
-	case H_DL0R0C17:
-		send_string("H_DL0R0C17");
-		return false;
-	case H_DL0R0C18:
-		send_string("H_DL0R0C18");
-		return false;
-	case H_DL0R0C19:
-		send_string("H_DL0R0C19");
-		return false;
-	case H_DL0R0C20:
-		send_string("H_DL0R0C20");
-		return false;
-	case H_DL0R0C21:
-		send_string("H_DL0R0C21");
-		return false;
-	case H_DL0R0C22:
-		send_string("H_DL0R0C22");
-		return false;
-	case H_DL0R0C23:
-		send_string("H_DL0R0C23");
-		return false;
-	case H_DL0R0C24:
-		send_string("H_DL0R0C24");
-		return false;
-	case H_DL0R0C25:
-		send_string("H_DL0R0C25");
-		return false;
-	case H_DL0R0C26:
-		send_string("H_DL0R0C26");
-		return false;
-	case H_DL0R0C27:
-		send_string("H_DL0R0C27");
-		return false;
-// [daughter board] row 2 POS key macros
-	case H_DL0R1C00:
-		send_string("doas pacman -Syu");
-		return false;
-	case H_DL0R1C01:
-		send_string("H_DL0R1C01");
-		return false;
-	case H_DL0R1C02:
-		send_string("H_DL0R1C02");
-		return false;
-	case H_DL0R1C03:
-		send_string("H_DL0R1C03");
-		return false;
-	case H_DL0R1C04:
-		send_string("H_DL0R1C04");
-		return false;
-	case H_DL0R1C05:
-		//send_string(LGUI(KC_P));
-		send_string("H_DL0R1C05");
-		return false;
-	case H_DL0R1C06:
-		send_string("H_DL0R1C06");
-		//send_string(LGUI(LSFT(KC_P)));
-		return false;
-	case H_DL0R1C07:
-		send_string("H_DL0R1C07");
-		return false;
-	case H_DL0R1C08:
-		send_string("H_DL0R1C08");
-		return false;
-	case H_DL0R1C09:
-		send_string("H_DL0R1C09");
-		return false;
-	case H_DL0R1C10:
-		send_string("H_DL0R1C10");
-		return false;
-	case H_DL0R1C11:
-		send_string("H_DL0R1C11");
-		return false;
-	case H_DL0R1C12:
-		send_string("H_DL0R1C12");
-		return false;
-	case H_DL0R1C13:
-		send_string("H_DL0R1C13");
-		return false;
-	case H_DL0R1C14:
-		send_string("H_DL0R1C14");
-		return false;
-	case H_DL0R1C15:
-		send_string("H_DL0R1C15");
-		return false;
-	case H_DL0R1C16:
-		send_string("H_DL0R1C16");
-		return false;
-	case H_DL0R1C17:
-		send_string("H_DL0R1C17");
-		return false;
-	case H_DL0R1C18:
-		send_string("H_DL0R1C18");
-		return false;
-	case H_DL0R1C19:
-		send_string("H_DL0R1C19");
-		return false;
-	case H_DL0R1C20:
-		send_string("H_DL0R1C20");
-		return false;
-	case H_DL0R1C21:
-		send_string("H_DL0R1C21");
-		return false;
-	case H_DL0R1C22:
-		send_string("H_DL0R1C22");
-		return false;
-	case H_DL0R1C23:
-		send_string("H_DL0R1C23");
-		return false;
-	case H_DL0R1C24:
-		send_string("H_DL0R1C24");
-		return false;
-	case H_DL0R1C25:
-		send_string("H_DL0R1C25");
-		return false;
-	case H_DL0R1C27:
-		send_string("H_DL0R1C27");
-		return false;
+      case H_HELP:
+        send_string("[HELP] key");
+        return false;
+      case H_MACRO:
+        send_string("[MACRO] key");
+        return false;
+      case H_TERMINAL:
+        send_string("[TERMINAL] key");
+        return false;
+      case H_QUOTE:
+        // wraps selected (editable) text in quotation marks
+        send_string(SS_LCTL(SS_TAP(X_X))SS_TAP(X_QUOTE)SS_LCTL(SS_TAP(X_V))SS_TAP(X_QUOTE));
+        return false;
+      case H_OVERSTRIKE:
+        // toggles insert/overstrike
+        send_string(SS_TAP(X_INSERT));
+        return false;
+      case H_CLEAR_INPUT:
+        // terminal: clears from the cursor to the beginning of the current command
+        send_string(SS_LCTL(SS_TAP(X_U)));
+        return false;
+      case H_CLEAR_SCREEN:
+        send_string(SS_LCTL(SS_TAP(X_L)));
+        // ^ linux/osx shell specific, for windows command replace with
+        // send_string(SS_TAP(X_C)SS_TAP(X_L)SS_TAP(X_S)SS_TAP(KC_ENTER));
+        return false;
+      case H_HOLD_OUTPUT:
+        send_string("[HOLD OUTPUT] key");
+        return false;
+      case H_STOP_OUTPUT:
+        send_string("[STOP OUTPUT] key");
+        return false;
+      case H_ABORT:
+        send_string(SS_LCTL(SS_TAP(X_C)));
+        return false;
+      case H_BREAK:
+        send_string(SS_TAP(X_PAUSE));
+        return false;
+      case H_RESUME:
+        send_string(SS_TAP(X_F)SS_TAP(X_G)SS_TAP(X_ENTER));
+        return false;
+      case H_CALL:
+        send_string("[CALL] key");
+        return false;
+
+      // [daughter board] row 2 POS key macros
+      case H_LOCAL:
+        send_string("[LOCAL] key");
+        return false;
+      case H_NETWORK:
+        send_string("[NETWORK] key");
+        return false;
+      case H_SYSTEM:
+        send_string("[SYSTEM] key");
+        return false;
+      case H_REFRESH:
+        send_string(SS_LCTL(SS_TAP(X_R)));
+        return false;
+      case H_BUFFER:
+        send_string("[BUFFER] key");
+        return false;
+      case H_SQUARE:
+        send_string("[SQUARE] key");
+        return false;
+      case H_CIRCLE:
+        send_string("[CIRCLE] key");
+        return false;
+      case H_TRIANGLE:
+        send_string("[TRIANGLE] key");
+        return false;
+      case H_DIAMOND:
+        send_string("[DIAMOND] key");
+        return false;
+      case H_REPEAT:
+        send_string("[REPEAT] key");
+        return false;
+      case H_TRANSMIT:
+        send_string("[TRANSMIT] key");
+        return false;
+      case H_STATUS:
+        send_string("[STATUS] key");
+        return false;
+      case H_SUSPEND:
+        send_string(SS_LCTL(SS_TAP(X_Z)));
+        return false;
+
       // [daughter board] row 3
-	case H_DL0R2C04:
-		send_string("H_DL0R2C04");
-		return false;
-	case H_DL0R2C05:
-		send_string("H_DL0R2C05");
-		return false;
-	case H_DL0R2C06:
-		send_string("H_DL0R2C06");
-		return false;
-	case H_DL0R2C11:
-		send_string("H_DL0R2C11");
-		return false;
-	case H_DL0R2C16:
-		send_string("H_DL0R2C16");
-		return false;
-	case H_DL0R2C21:
-		send_string("H_DL0R2C21");
-		return false;
-	case H_DL0R2C22:
-		send_string("H_DL0R2C22");
-		return false;
-	case H_DL0R2C23:
-		send_string("H_DL0R2C23");
-		return false;
-	case H_DL0R2C24:
-		send_string("H_DL0R2C24");
-		return false;
-	case H_DL0R2C25:
-		send_string("H_DL0R2C25");
-		return false;
-	case H_DL0R2C26:
-		send_string("H_DL0R2C26");
-		return false;
-	case H_DL0R2C27:
-		send_string("H_DL0R2C27");
-		return false;
-	case H_ML0R3C05:
-		send_string("H_ML0R3C05");
-		return false;
-	case H_ML0R3C21:
-		send_string("H_ML0R3C21");
-		return false;
-	case H_ML0R5C21:
-		send_string("H_ML0R5C21");
-		return false;
+      case H_CLOSE:
+        // ctrl-w: closes a tab/panel within an application
+        send_string(SS_LCTL(SS_TAP(X_W)));
+        return false;
+      case H_OPEN:
+        // ctrl-n: opens a tab/panel
+        send_string(SS_LCTL(SS_TAP(X_N)));
+        return false;
+      case H_COMPLETE:
+        // tab tab: bash command line completion
+        send_string(SS_TAP(X_TAB)SS_TAP(X_TAB));
+        return false;
     case H_PAGE:
         if (get_mods() & MODS_SHIFT_MASK) {
           CLEAN_MODS(
@@ -1342,12 +1235,6 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
         } else {
           send_string(SS_TAP(X_PGDN));
         }
-		return false;
-	case H_ML0R7C06:
-		send_string("H_ML0R7C06");
-		return false;
-	case H_ML0R7C14:
-		send_string("H_ML0R7C14");
 		return false;
     }
   }
