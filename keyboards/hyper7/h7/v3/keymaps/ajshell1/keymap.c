@@ -804,84 +804,61 @@ const uint32_t PROGMEM unicode_map[] = {
 #define _HEB 5
 
 enum custom_keycodes {
-    // daughter board R0
-	H_DL0R0C00 = SAFE_RANGE,
-	H_DL0R0C01,
-	H_DL0R0C02,
-	H_DL0R0C03,
-	H_DL0R0C04,
-	H_DL0R0C05,
-	H_DL0R0C06,
-	H_DL0R0C07,
-	H_DL0R0C08,
-	H_DL0R0C09,
-	H_DL0R0C10,
-	H_DL0R0C11,
-	H_DL0R0C12,
-	H_DL0R0C13,
-	H_DL0R0C14,
-	H_DL0R0C15,
-	H_DL0R0C16,
-	H_DL0R0C17,
-	H_DL0R0C18,
-	H_DL0R0C19,
-	H_DL0R0C20,
-	H_DL0R0C21,
-	H_DL0R0C22,
-	H_DL0R0C23,
-	H_DL0R0C24,
-	H_DL0R0C25,
-	H_DL0R0C26,
-	H_DL0R0C27,
     // daughter board R1
-	H_DL0R1C00,
-	H_DL0R1C01,
-	H_DL0R1C02,
-	H_DL0R1C03,
-	H_DL0R1C04,
-	H_DL0R1C05,
-	H_DL0R1C06,
-	H_DL0R1C07,
-	H_DL0R1C08,
-	H_DL0R1C09,
-	H_DL0R1C10,
-	H_DL0R1C11,
-	H_DL0R1C12,
-	H_DL0R1C13,
-	H_DL0R1C14,
-	H_DL0R1C15,
-	H_DL0R1C16,
-	H_DL0R1C17,
-	H_DL0R1C18,
-	H_DL0R1C19,
-	H_DL0R1C20,
-	H_DL0R1C21,
-	H_DL0R1C22,
-	H_DL0R1C23,
-	H_DL0R1C24,
-	H_DL0R1C25,
-	H_DL0R1C27,
+    H_HELP = SAFE_RANGE,
+    H_MACRO,
+    H_TERMINAL,
+    H_QUOTE,
+    H_OVERSTRIKE,
+    H_CLEAR_INPUT,
+    H_CLEAR_SCREEN,
+    H_HOLD_OUTPUT,
+    H_STOP_OUTPUT,
+    H_ABORT,
+    H_BREAK,
+    H_RESUME,
+    H_CALL,
+
     // daughter board R2
-	H_DL0R2C04,
-	H_DL0R2C05,
-	H_DL0R2C06,
-	H_DL0R2C11,
-	H_DL0R2C16,
-	H_DL0R2C21,
-	H_DL0R2C22,
-	H_DL0R2C23,
-	H_DL0R2C24,
-	H_DL0R2C25,
-	H_DL0R2C26,
-	H_DL0R2C27,
-    //left cluster
-    //mainboard
-	H_ML0R3C05,
-	H_ML0R3C21,
-	H_ML0R5C21,
-	H_PAGE,
-	H_ML0R7C06,
-	H_ML0R7C14
+    H_LOCAL,
+    H_NETWORK,
+    H_SYSTEM,
+    H_REFRESH,
+    H_BUFFER,
+    H_SQUARE,
+    H_CIRCLE,
+    H_TRIANGLE,
+    H_DIAMOND,
+    H_REPEAT,
+    H_TRANSMIT,
+    H_STATUS,
+    H_SUSPEND,
+
+    // daughter board r3
+    H_CLOSE,
+    H_OPEN,
+    H_COMPLETE,
+
+    // main board r1
+    H_FIND,
+    H_WRITE,
+
+    // main board r2
+    H_MARK,
+    H_UNDO,
+
+    // main board r3
+    H_SELECT,
+    H_DEBUG,
+    H_PAGE,
+
+    // main board r4
+    H_TTY,
+    H_LOCK, // lock machine?
+
+    // main board r5
+    H_HOME,
+    H_EOF
 };
 /* blank layout
 *┌─────┬─────┬─────┬─────┐  ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐ ┌─────┬─────┬─────┬─────┐
