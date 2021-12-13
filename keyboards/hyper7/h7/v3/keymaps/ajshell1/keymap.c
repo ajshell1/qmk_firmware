@@ -942,7 +942,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *  r2: H_7BIT, H_CIRCLE_SM
      */
     [_BASE] = LAYOUT_h7v3_183(
-        H_HELP,                 DM_PLY2,                    H_TERMINAL,                H_QUOTE,                H_OVERSTIKE,            H_CLEAR_INPUT,          H_CLEAR_SCREEN,         H_HOLD_OUTPUT,          H_STOP_OUTPUT,          H_ABORT,                H_BREAK,                H_RESUME,                   H_CALL,                 KC_NLCK,           //14
+        H_HELP,                 DM_PLY2,                    H_TERMINAL,                H_QUOTE,                H_OVERSTRIKE,           H_CLEAR_INPUT,          H_CLEAR_SCREEN,         H_HOLD_OUTPUT,          H_STOP_OUTPUT,          H_ABORT,                H_BREAK,                H_RESUME,                   H_CALL,                 KC_NLCK,           //14
         H_LOCAL,                H_NETWORK,                  H_SYSTEM,                  H_REFRESH,              H_BUFFER,               H_SQUARE,               H_CIRCLE,               H_TRIANGLE,             H_DIAMOND,              H_REPEAT,               H_TRANSMIT,             H_STATUS,                   H_SUSPEND,              KC_CLCK,           //14
         KC_F13,     KC_F14,     KC_F1,      KC_F2,          KC_ESC,                    KC_QUES,    KC_EXLM,    KC_AT,      X(GBP),     X(EURO),    X(JPY),     X(SQT_OPEN),X(DQT_OPEN),X(DQT_CLSE),X(SQT_CLSE),KC_UNDS,    KC_LABK,    KC_RABK,    KC_PIPE,    KC_LCBR,    KC_RCBR,    H_COMPLETE,                 KC_CIRC,    KC_PERC,    KC_HASH,    KC_DLR,
 
