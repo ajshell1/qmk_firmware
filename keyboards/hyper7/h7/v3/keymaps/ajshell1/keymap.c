@@ -403,11 +403,8 @@ const uint32_t PROGMEM unicode_map[] = {
     //[DQUOTE_CLOSE] = 0x201D,
     //[PRIME] = 0x2019,
     //[PIPE] = 0x2502,
-
-
-// Greek
-
-// [main board] row 1
+    // Greek
+    // [main board] row 1
     [GREEK_LC_THETA] = 0x03B8,
     [GREEK_UC_THETA] = 0x0398,
     [GREEK_LC_OMEGA] = 0x03C9,
@@ -428,7 +425,7 @@ const uint32_t PROGMEM unicode_map[] = {
     [GREEK_UC_OMICRON] = 0x039F,
     [GREEK_LC_PI] = 0x03C0,
     [GREEK_UC_PI] = 0x03A0,
-// [main board] row 2
+    // [main board] row 2
     [GREEK_LC_ALPHA] = 0x03B1,
     [GREEK_UC_ALPHA] = 0x0391,
     [GREEK_LC_SIGMA] = 0x03C3,
@@ -447,8 +444,7 @@ const uint32_t PROGMEM unicode_map[] = {
     [GREEK_UC_KAPPA] = 0x039A,
     [GREEK_LC_LAMDA] = 0x03BB,
     [GREEK_UC_LAMDA] = 0x039B,
-
-// [main board] row 3
+    // [main board] row 3
     [GREEK_LC_ZETA] = 0x03B6,
     [GREEK_UC_ZETA] = 0x0396,
     [GREEK_LC_XI] = 0x03BE,
@@ -461,7 +457,6 @@ const uint32_t PROGMEM unicode_map[] = {
     [GREEK_UC_NU] = 0x039D,
     [GREEK_LC_MU] = 0x03BC,
     [GREEK_UC_MU] = 0x039C,
-
     //Cyrillic
     //ORDER TAKEN FROM HERE:
     //https://en.wikipedia.org/wiki/Cyrillic_script
@@ -612,7 +607,7 @@ const uint32_t PROGMEM unicode_map[] = {
     [MULTIPLICATION] = 0x00D7,
     [PILCROW] = 0x00B6,
     [LARGE_CIRCLE] = 0x25EF,
-//  [THREE_EM_DASH] = 0x2E3B,
+    //[THREE_EM_DASH] = 0x2E3B,
     [HORIZONTAL_BAR] = 0x2015,
     [APPROXIMATELY_EQUAL_TO] = 0x2248,
     [DOUBLE_VERTICAL_LINE] = 0x2016,
