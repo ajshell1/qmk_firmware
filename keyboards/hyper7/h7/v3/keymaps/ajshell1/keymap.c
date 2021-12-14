@@ -916,7 +916,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 *├───────────┼───────────┤  ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┤
 *│LOCAL      │DM_PLY2    │  │SYSTEM     │REFRESH    │SAVE ACTIVE│SAVE AREA  │SAVE WINDOW│SAVE OUTPUT│SAVE SCREEN│REPEAT     │TRASMIT    │STATUS     │ │DM_REC2    │CAPS LOCK  │
 *├─────┬─────┼─────┬─────┤  ├───────────┼─────┬─────┼─────┬─────┼─────┬─────┼─────┬─────┼─────┬─────┼─────┬─────┼─────┬─────┼─────┬─────┼───────────┤ ├─────┬─────┼─────┬─────┤
-*│F13  │F14  │F1   │F2   │  │ESC        │  ?  │  !  │  @  │  £  │  €  │  ¥  │  ‘  │  “  │  ”  │  ’  │  _  │  <  │  >  │  |  │  {  │  }  │MSTOP│INS  │ │  ^  │  %  │  #  │  $  │
+*│F13  │F14  │F1   │F2   │  │ESC        │  ?  │  !  │  @  │  £  │  €  │  ¥  │  ‘  │  “  │  ”  │  ’  │  _  │  <  │  >  │  |  │  {  │  }  │COMPLETE   │ │  ^  │  %  │  #  │  $  │
 *└─────┴─────┴─────┴─────┘  └───────────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴───────────┘ └─────┴─────┴─────┴─────┘
 *
 *┌─────┬─────┬─────┬─────┐  ┌────────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬────────┐ ┌─────┬─────┬─────┬─────┐
@@ -930,11 +930,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 *├─────┼─────┼─────┼─────┤  ├─────┼─────┼─────┬──┴──┬─────┴──┬──┴──┬──┴─────┼─────┴──┬──┴──┬──┴─────┼─────┴──┬──┴──┬──┴─────┬──┴──┬─────┼─────┼─────┤ ├─────┼─────┼─────┼─────┤
 *│F23  │F24  │F11  │F12  │  │VOLD │VOLU │MUTE │MEH  │LGUI    │LALT │LCTRL   │SPACE   │_FN  │SPACE   │CONTROL │SUPER│HYPER   │APP  │LEFT │DOWN │RIGHT│ │  0  │ DEL │  .  │FUN  │
 *└─────┴─────┴─────┴─────┘  └─────┴─────┴─────┴─────┴────────┴─────┴────────┴────────┴─────┴────────┴────────┴─────┴────────┴─────┴─────┴─────┴─────┘ └─────┴─────┴─────┴─────┘
-     *  Incomplete mappings
-     *  r1: H_TERMINAL, H_OVER_STRIKE, H_HOLD_OUTPUT, H_STOP_INPUT, H_CALL
-     *  r2: H_LOCAL, H_SYSTEM, H_REFRESH, H_REPEAT, H_TRANSMIT, H_STATUS
-     *  r3: H_COMPLETE
+     *  Mapped for MY purposes
+     *R1: Macro (DM_PLY1), Over strike (INS), Stop Input (DM_RSTP), Break (Pause), Resume (Steam), Call (DM_REC1), Reset (Scroll Lock)
+     *R2: Network (DM_PLY2), buffers and shapes (screenshots), Suspend (DM_REC2), Caps lock (KC_CLCK)
+     *LEFT Cluster: None so far.
      *
+     * NOTES: All possible compose key options on XKB:
+     *https://www.commandlinux.com/man-page/man7/xkeyboard-config.7.html
+     *Leftwin (No), RWin (maybe?) Menu (maybe?), LCTRL (NO) RCTRL (NO), Caps (NO), KC_NUBS (would that work?), Pause, PrtScr, Scrollock (all viable)
 
      */
     [_BASE] = LAYOUT_h7v3_183(
