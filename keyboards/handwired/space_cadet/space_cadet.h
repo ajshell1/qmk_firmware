@@ -26,9 +26,14 @@
  * The second converts the arguments into a two-dimensional array which
  * represents the switch matrix.
  */
+//12 rows, 11 colums
 #define LAYOUT( \
-    k00, k01, k02, \
-      k10,  k12    \
+    k101, k102, k103, k104, k105, k106, k107, k108, k109, k110, k111, k112, \
+    k201, k202, k203, k204, k205, k206, k207, k208, k209, k210, k211, k212, k213, k214, k215, k216, k217, k218, k219, k220, k221,    \
+    k301, k302, k303, k304, k305, k306, k307, k308, k309, k310, k311, k312, k313, k314, k315, k316, k317, k318, k319, k320, k321,    \
+    k401, k402, k403, k404, k405, k406, k407, k408, k409, k410, k411, k412, k413, k414, k415, k416, k417, k418,    \
+    k501, k502, k503, k504, k505, k506, k507, k508, k509, k510, k511, k512, k513, k514, k515, k516, k517, k518, k519,   \
+    k601, k602, k603, k604, k605, k606, k607, k608, k609
 ) { \
     { k00, k01,   k02 }, \
     { k10, KC_NO, k12 }  \
